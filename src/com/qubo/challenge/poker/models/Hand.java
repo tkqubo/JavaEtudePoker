@@ -18,7 +18,9 @@ public class Hand implements Iterable<Card> {
 	 * 標準のコンストラクタ
 	 * @param cards 配られた5枚のカードを、配列として表現したもの
 	 */
-	Hand(Card... cards) { this.cards = cards; }
+	Hand(Card card1, Card card2, Card card3, Card card4, Card card5) {
+		this.cards = new Card[] { card1, card2, card3, card4, card5 };
+	}
 	/**
 	 * カードの文字列を利用したコンストラクタ
 	 * @param c1 1枚目のカードの文字列表現
@@ -29,7 +31,7 @@ public class Hand implements Iterable<Card> {
 	 * @throws CardException 文字列のフォーマットがおかしい場合に発生
 	 */
 	public Hand(String c1, String c2, String c3, String c4, String c5) throws CardException {
-		this.cards = new Card[] { Card.parse(c1), Card.parse(c2), Card.parse(c3), Card.parse(c4), Card.parse(c5) };
+		this(Card.parse(c1), Card.parse(c2), Card.parse(c3), Card.parse(c4), Card.parse(c5));
 	}
 
 	/**

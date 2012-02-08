@@ -10,19 +10,11 @@ import java.util.Random;
  * @author Qubo
  */
 public class Deck {
-	/** デッキ内に含むことのできるジョーカーの最大枚数: {@code 2} */
+	/** デッキ内に含むことのできるジョーカーの最大枚数 */
 	public static final int JOKER_COUNT_MAX = 2;
-	/** デッキ内に交換できるカードが足りない場合に発生:
-	 * <code>
-	 * "デッキ内の交換できるカードが{0}枚足りません！"
-	 * </code>
-	 */
+	/** デッキ内に交換できるカードが足りない場合に発生 */
 	public static final String ERROR_DECK_CARD_DEFICIT = "デッキにカードが{0}枚足りません！";
-	/** ジョーカーの枚数指定がおかしい場合に発生する例外のメッセージ:
-	 * <code>
-	 * "ジョーカーの数は0枚～2枚の間で設定してください！"
-	 * </code>
-	 */
+	/** ジョーカーの枚数指定がおかしい場合に発生する例外のメッセージ */
 	public static final String ERROR_JOKER_COUNT_RANGE = "ジョーカーの数は0枚～2枚の間で設定してください！";
 	private static final Random random = new Random();
 	private final List<Card> cards;
@@ -70,15 +62,7 @@ public class Deck {
 	 */
 	public Hand deal() throws CardException {
 		if (cards.size() < 5) throw new CardException(MessageFormat.format(ERROR_DECK_CARD_DEFICIT, 5 - cards.size()));
-
-		Card[] dealt = new Card[5];
-
-		for (int i = 0; i < 5; i++) {
-			Card card = draw();
-			dealt[i] = card;
-		}
-
-		return new Hand(dealt);
+		return new Hand(draw(), draw(), draw(), draw(), draw());
 	}
 	/**
 	 * {@link Hand}インスタンスの手の中から、

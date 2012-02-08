@@ -17,15 +17,15 @@ public enum Suit {
 	/** ジョーカー */
 	Joker { @Override public char getSymbol() { return SYMBOL_JOKER; } },
 	;
-	/** ハートの文字表現: {@code 'H'} */
+	/** ハートの文字表現 */
 	public static final char SYMBOL_HEART = 'H';
-	/** スペードの文字表現: {@code 'S'} */
+	/** スペードの文字表現 */
 	public static final char SYMBOL_SPADE = 'S';
-	/** ハートの文字表現: {@code 'D'} */
+	/** ハートの文字表現 */
 	public static final char SYMBOL_DIAMOND = 'D';
-	/** クラブの文字表現: {@code 'C'} */
+	/** クラブの文字表現 */
 	public static final char SYMBOL_CLUB = 'C';
-	/** ジョーカーの文字表現: {@code ' '} */
+	/** ジョーカーの文字表現 */
 	public static final char SYMBOL_JOKER = ' ';
 
 	/**

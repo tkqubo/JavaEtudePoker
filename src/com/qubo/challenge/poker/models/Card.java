@@ -9,39 +9,24 @@ import com.qubo.Utils;
  * @author Qubo
  */
 public class Card {
-	/**
-	 * 文字列のフォーマットがおかしい場合に発生:
-	 * <code>
-	 * "文字列[{0}]中の[{1}]を処理できませんでした！"
-	 * </code>
-	 */
+	/** 文字列のフォーマットがおかしい場合に発生 */
 	public static final String ERROR_PARSE = "文字列[{0}]中の[{1}]を処理できませんでした！";
-	/**
-	 * コンストラクタに与えた数値が、範囲外の場合に発生:
-	 * <code>
-	 * "ジョーカー以外のカードを生成する場合は、数値を2～14の範囲内で指定してください！"
-	 * </code>
-	 */
+	/** コンストラクタに与えた数値が、範囲外の場合に発生 */
 	public static final String ERROR_NUMBER_OUT_OF_RANGE = "ジョーカー以外のカードを生成する場合は、数値を2～14の範囲内で指定してください！";
-	/**
-	 * コンストラクタに与えたマークが{@code null}だった場合に発生:
-	 * <code>
-	 * "マークにはnullを指定できません！"
-	 * </code>
-	 */
+	/** コンストラクタに与えたマークが{@code null}だった場合に発生 */
 	public static final String ERROR_SUIT_NULL = "マークにはnullを指定できません！";
 
-	/** ジャックの文字表現: {@code 'J'} */
+	/** ジャックの文字表現 */
 	public static final char SYMBOL_JACK = 'J';
-	/** クイーンの文字表現: {@code 'Q'} */
+	/** クイーンの文字表現 */
 	public static final char SYMBOL_QUEEN = 'Q';
-	/** キングの文字表現: {@code 'K'} */
+	/** キングの文字表現 */
 	public static final char SYMBOL_KING = 'K';
-	/** エースの文字表現: {@code 'A'} */
+	/** エースの文字表現 */
 	public static final char SYMBOL_ACE = 'A';
-	/** ジョーカーの文字表現: {@code ' '} */
+	/** ジョーカーの文字表現 */
 	public static final char SYMBOL_JOKER = ' ';
-	/** ジョーカーの数字: {@code -1} */
+	/** ジョーカーの数字 */
 	public static final int RAW_VALUE_JOKER = -1;
 
 	private final Suit suit;

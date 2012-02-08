@@ -103,27 +103,27 @@ public enum TypeOfHand {
 		}
 	};
 
-	/** 役名: {@code "ファイブカード"} */
+	/** 役名 */
 	public static final String NAME_FIVE_OF_A_KIND = "ファイブカード";
-	/** 役名: {@code "ロイヤルフラッシュ"} */
+	/** 役名 */
 	public static final String NAME_ROYAL_FLUSH = "ロイヤルフラッシュ";
-	/** 役名: {@code "ストレートフラッシュ"} */
+	/** 役名 */
 	public static final String NAME_STRAIGHT_FLUSH = "ストレートフラッシュ";
-	/** 役名: {@code "フォーカード"} */
+	/** 役名 */
 	public static final String NAME_FOUR_OF_A_KIND = "フォーカード";
-	/** 役名: {@code "フルハウ"}ス */
+	/** 役名ス */
 	public static final String NAME_FULL_HOUSE = "フルハウス";
-	/** 役名: {@code "フラッシュ"} */
+	/** 役名 */
 	public static final String NAME_FLUSH = "フラッシュ";
-	/** 役名: {@code "ストレート"} */
+	/** 役名 */
 	public static final String NAME_STRAIGHT = "ストレート";
-	/** 役名: {@code "スリーカード"} */
+	/** 役名 */
 	public static final String NAME_THREE_OF_A_KIND = "スリーカード";
-	/** 役名: {@code "ツーペア"} */
+	/** 役名 */
 	public static final String NAME_TWO_PAIR = "ツーペア";
-	/** 役名: {@code "ワンペア"} */
+	/** 役名 */
 	public static final String NAME_ONE_PAIR = "ワンペア";
-	/** 役名: {@code "役無し"} */
+	/** 役名 */
 	public static final String NAME_HIGH_CARDS = "役無し";
 
 	/**
