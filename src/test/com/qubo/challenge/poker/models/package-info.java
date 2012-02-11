@@ -1,2 +1,2 @@
-/** パッケージ{@link com.qubo.challenge.poker.models}用テストを定義したパッケージ */
+/** 繝代ャ繧ｱ繝ｼ繧ｸ{@link com.qubo.challenge.poker.models}逕ｨ繝�繧ｹ繝医ｒ螳夂ｾｩ縺励◆繝代ャ繧ｱ繝ｼ繧ｸ */
 package test.com.qubo.challenge.poker.models;

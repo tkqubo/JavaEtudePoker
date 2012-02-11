@@ -8,48 +8,48 @@ import com.qubo.views.View;
 import com.qubo.views.ViewApplication;
 
 /**
- * ƒRƒ“ƒ\[ƒ‹ƒvƒƒOƒ‰ƒ€‚Æ‚µ‚Äƒ|[ƒJ[‚ğƒvƒŒƒC‚·‚é‚½‚ß‚ÌƒVƒXƒeƒ€
+ * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¨ã—ã¦ãƒãƒ¼ã‚«ãƒ¼ã‚’ãƒ—ãƒ¬ã‚¤ã™ã‚‹ãŸã‚ã®ã‚·ã‚¹ãƒ†ãƒ 
  * @author Qubo
  */
 public class ConsoleGame {
 	/**
-	 * ƒ|[ƒJ[‚ğƒvƒŒƒC‚·‚é
-	 * @throws CardException ƒQ[ƒ€“à‚ÅƒGƒ‰[‚ª‚ ‚Á‚½ê‡‚É”­¶
+	 * ãƒãƒ¼ã‚«ãƒ¼ã‚’ãƒ—ãƒ¬ã‚¤ã™ã‚‹
+	 * @throws CardException ã‚²ãƒ¼ãƒ å†…ã§ã‚¨ãƒ©ãƒ¼ãŒã‚ã£ãŸå ´åˆã«ç™ºç”Ÿ
 	 */
 	public void play() throws CardException {
 		ViewApplication.start(buildMenu());
 	}
 
 	/**
-	 * ƒ|[ƒJ[ƒQ[ƒ€‚Ì‚½‚ß‚ÌƒƒCƒ“ƒƒjƒ…[‚ğ¶¬‚·‚é
-	 * @return ƒƒCƒ“ƒƒjƒ…[ƒIƒuƒWƒFƒNƒg
+	 * ãƒãƒ¼ã‚«ãƒ¼ã‚²ãƒ¼ãƒ ã®ãŸã‚ã®ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ç”Ÿæˆã™ã‚‹
+	 * @return ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 */
 	public View buildMenu() {
-		final MenuView menu = new MenuView("ƒƒCƒ“ƒƒjƒ…[");
+		final MenuView menu = new MenuView("ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼");
 
 		View gameStart = new View() {
 			@Override public View view() { return new GameView(menu); }
-			@Override public String getName() { return "ƒQ[ƒ€ŠJn"; }
+			@Override public String getName() { return "ã‚²ãƒ¼ãƒ é–‹å§‹"; }
 		};
-		View changeJokerCount = new IntegerInputView(menu, "ƒWƒ‡[ƒJ[‚Ì–‡”", 0, 2) {
+		View changeJokerCount = new IntegerInputView(menu, "ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°", 0, 2) {
 			@Override protected void setValue(int value) { Configuration.jokerCount = value; }
 			@Override protected int getValue() { return Configuration.jokerCount; }
 		};
-		View changeChangeCount = new IntegerInputView(menu, "ŒğŠ·‰ñ”", 0, 20) {
+		View changeChangeCount = new IntegerInputView(menu, "äº¤æ›å›æ•°", 0, 20) {
 			@Override protected void setValue(int value) { Configuration.changeCount = value; }
 			@Override protected int getValue() { return Configuration.changeCount; }
 		};
-		View resetSettings = new AbstractYesNoView("İ’è‚ÌƒŠƒZƒbƒg", "–{“–‚Éİ’è‚ğƒŠƒZƒbƒg‚µ‚Ü‚·‚©H", true) {
+		View resetSettings = new AbstractYesNoView("è¨­å®šã®ãƒªã‚»ãƒƒãƒˆ", "æœ¬å½“ã«è¨­å®šã‚’ãƒªã‚»ãƒƒãƒˆã—ã¾ã™ã‹ï¼Ÿ", true) {
 			@Override protected View view(Boolean input) {
 				if (input) {
 					Configuration.jokerCount = Configuration.DEFAULT_JOKERCOUNT;
 					Configuration.changeCount = Configuration.DEFAULT_CHANGECOUNT;
-					print("ƒWƒ‡[ƒJ[‚Ì–‡”‚ğ{0}–‡AŒğŠ·‰ñ”‚ğ{1}‰ñ‚É–ß‚µ‚Ü‚µ‚½B", Configuration.jokerCount, Configuration.changeCount);
+					print("ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°ã‚’{0}æšã€äº¤æ›å›æ•°ã‚’{1}å›ã«æˆ»ã—ã¾ã—ãŸã€‚", Configuration.jokerCount, Configuration.changeCount);
 				}
 				return menu;
 			}
 		};
-		View quit = new AbstractYesNoView("I—¹", "–{“–‚ÉI—¹‚µ‚Ü‚·‚©H", true) {
+		View quit = new AbstractYesNoView("çµ‚äº†", "æœ¬å½“ã«çµ‚äº†ã—ã¾ã™ã‹ï¼Ÿ", true) {
 			@Override protected View view(Boolean input) { return input ? null : menu; }
 		};
 

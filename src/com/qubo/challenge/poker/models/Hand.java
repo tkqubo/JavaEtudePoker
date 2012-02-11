@@ -8,41 +8,41 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * ƒ|[ƒJ[‚ÌèD‚ğ•\Œ»‚µ‚½ƒNƒ‰ƒX
+ * ãƒãƒ¼ã‚«ãƒ¼ã®æ‰‹æœ­ã‚’è¡¨ç¾ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class Hand implements Iterable<Card> {
 	Card[] cards;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param cards ”z‚ç‚ê‚½5–‡‚ÌƒJ[ƒh‚ğA”z—ñ‚Æ‚µ‚Ä•\Œ»‚µ‚½‚à‚Ì
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param cards é…ã‚‰ã‚ŒãŸ5æšã®ã‚«ãƒ¼ãƒ‰ã‚’ã€é…åˆ—ã¨ã—ã¦è¡¨ç¾ã—ãŸã‚‚ã®
 	 */
 	Hand(Card card1, Card card2, Card card3, Card card4, Card card5) {
 		this.cards = new Card[] { card1, card2, card3, card4, card5 };
 	}
 	/**
-	 * ƒJ[ƒh‚Ì•¶š—ñ‚ğ—˜—p‚µ‚½ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param c1 1–‡–Ú‚ÌƒJ[ƒh‚Ì•¶š—ñ•\Œ»
-	 * @param c2 2–‡–Ú‚ÌƒJ[ƒh‚Ì•¶š—ñ•\Œ»
-	 * @param c3 3–‡–Ú‚ÌƒJ[ƒh‚Ì•¶š—ñ•\Œ»
-	 * @param c4 4–‡–Ú‚ÌƒJ[ƒh‚Ì•¶š—ñ•\Œ»
-	 * @param c5 5–‡–Ú‚ÌƒJ[ƒh‚Ì•¶š—ñ•\Œ»
-	 * @throws CardException •¶š—ñ‚ÌƒtƒH[ƒ}ƒbƒg‚ª‚¨‚©‚µ‚¢ê‡‚É”­¶
+	 * ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—ã‚’åˆ©ç”¨ã—ãŸã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param c1 1æšç›®ã®ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—è¡¨ç¾
+	 * @param c2 2æšç›®ã®ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—è¡¨ç¾
+	 * @param c3 3æšç›®ã®ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—è¡¨ç¾
+	 * @param c4 4æšç›®ã®ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—è¡¨ç¾
+	 * @param c5 5æšç›®ã®ã‚«ãƒ¼ãƒ‰ã®æ–‡å­—åˆ—è¡¨ç¾
+	 * @throws CardException æ–‡å­—åˆ—ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒãŠã‹ã—ã„å ´åˆã«ç™ºç”Ÿ
 	 */
 	public Hand(String c1, String c2, String c3, String c4, String c5) throws CardException {
 		this(Card.parse(c1), Card.parse(c2), Card.parse(c3), Card.parse(c4), Card.parse(c5));
 	}
 
 	/**
-	 * {@code index}‚ÌˆÊ’u‚É‚ ‚éƒJ[ƒh‚ğæ“¾‚·‚éB
-	 * @param index ƒJ[ƒh‚ÌˆÊ’u
-	 * @return {@link Card}ƒCƒ“ƒXƒ^ƒ“ƒX
+	 * {@code index}ã®ä½ç½®ã«ã‚ã‚‹ã‚«ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹ã€‚
+	 * @param index ã‚«ãƒ¼ãƒ‰ã®ä½ç½®
+	 * @return {@link Card}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	public Card get(int index) { return cards[index]; }
 
 	/*
-	 * (”ñ Javadoc)
+	 * (é Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class Hand implements Iterable<Card> {
 		return MessageFormat.format("[{0}][{1}][{2}][{3}][{4}]", cards[0], cards[1], cards[2], cards[3], cards[4]);
 	}
 	/*
-	 * (”ñ Javadoc)
+	 * (é Javadoc)
 	 * @see java.lang.Iterable#iterator()
 	 */
 	@Override
@@ -58,8 +58,8 @@ public class Hand implements Iterable<Card> {
 		return Collections.unmodifiableList(Arrays.asList(cards)).iterator();
 	}
 	/**
-	 * èD‚Ì’†‚ÌƒWƒ‡[ƒJ[‚Ì”‚ğ”‚¦‚é
-	 * @return ƒWƒ‡[ƒJ[‚Ì”
+	 * æ‰‹æœ­ã®ä¸­ã®ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°ã‚’æ•°ãˆã‚‹
+	 * @return ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°
 	 */
 	public int getJoker() {
 		int total = 0;
@@ -69,9 +69,9 @@ public class Hand implements Iterable<Card> {
 		return total;
 	}
 	/**
-	 * èD‚Ì’†‚©‚çAÅ¬‚Ì”‚ğæ“¾‚·‚éB
-	 * ƒWƒ‡[ƒJ[‚Í–³‹‚³‚ê‚éB
-	 * @return Å¬‚Ì”
+	 * æ‰‹æœ­ã®ä¸­ã‹ã‚‰ã€æœ€å°ã®æ•°ã‚’å–å¾—ã™ã‚‹ã€‚
+	 * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚
+	 * @return æœ€å°ã®æ•°
 	 */
 	public int getLowestNumber() {
 		int min = Integer.MAX_VALUE;
@@ -81,9 +81,9 @@ public class Hand implements Iterable<Card> {
 		return min;
 	}
 	/**
-	 * èD‚Ì’†‚©‚çAÅ‘å‚Ì”‚ğæ“¾‚·‚éB
-	 * ƒWƒ‡[ƒJ[‚Í–³‹‚³‚ê‚éB
-	 * @return Å‘å‚Ì”
+	 * æ‰‹æœ­ã®ä¸­ã‹ã‚‰ã€æœ€å¤§ã®æ•°ã‚’å–å¾—ã™ã‚‹ã€‚
+	 * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚
+	 * @return æœ€å¤§ã®æ•°
 	 */
 	public int getHighestNumber() {
 		int max = Integer.MIN_VALUE;
@@ -93,13 +93,13 @@ public class Hand implements Iterable<Card> {
 		return max;
 	}
 	/**
-	 * èD‚Ì’†‚ÉA“¯‚¶”š‚ÌƒJ[ƒh‚ª{@code count}–‡‘µ‚Á‚Ä‚¢‚é‚æ‚¤‚È‘g‚ªA
-	 * ‰½ƒZƒbƒg‚ ‚é‚©‚ğ•Ô‚·B<br />
-	 * —á‚¦‚Î{@code (isOfAkind(hand, 2) == 2)}‚Æ‚È‚Á‚½ê‡‚Íƒc[ƒyƒA‚Æ‚È‚èA
-	 * {@code (isOfAkind(hand, 3) == 1 && isOfAkind(hand, 2) == 1)}‚Æ‚È‚Á‚½ê‡‚Íƒtƒ‹ƒnƒEƒX‚Æ‚È‚éB
-	 * ƒWƒ‡[ƒJ[‚ÍƒJƒEƒ“ƒg‚É‰Á‚¦‚È‚¢B
-	 * @param count ‘µ‚Á‚Ä‚¢‚é‚×‚«–‡”
-	 * @return ƒZƒbƒg”
+	 * æ‰‹æœ­ã®ä¸­ã«ã€åŒã˜æ•°å­—ã®ã‚«ãƒ¼ãƒ‰ãŒ{@code count}æšæƒã£ã¦ã„ã‚‹ã‚ˆã†ãªçµ„ãŒã€
+	 * ä½•ã‚»ãƒƒãƒˆã‚ã‚‹ã‹ã‚’è¿”ã™ã€‚<br />
+	 * ä¾‹ãˆã°{@code (isOfAkind(hand, 2) == 2)}ã¨ãªã£ãŸå ´åˆã¯ãƒ„ãƒ¼ãƒšã‚¢ã¨ãªã‚Šã€
+	 * {@code (isOfAkind(hand, 3) == 1 && isOfAkind(hand, 2) == 1)}ã¨ãªã£ãŸå ´åˆã¯ãƒ•ãƒ«ãƒã‚¦ã‚¹ã¨ãªã‚‹ã€‚
+	 * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã¯ã‚«ã‚¦ãƒ³ãƒˆã«åŠ ãˆãªã„ã€‚
+	 * @param count æƒã£ã¦ã„ã‚‹ã¹ãæšæ•°
+	 * @return ã‚»ãƒƒãƒˆæ•°
 	 */
 	public int isOfAKind(int count) {
 		int found = 0;
@@ -127,9 +127,9 @@ public class Hand implements Iterable<Card> {
 		return false;
 	}
 	/**
-	 * èD‚ªAw’è‚³‚ê‚½”š‚©‚ç˜A‘±‚µ‚½”š‚Å\¬‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * @param start ƒV[ƒPƒ“ƒX‚ÌŠJn”š
-	 * @return èD‚ªw’è‚³‚ê‚½”š‚©‚ç˜A‘±‚µ‚½”š‚Å\¬‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+	 * æ‰‹æœ­ãŒã€æŒ‡å®šã•ã‚ŒãŸæ•°å­—ã‹ã‚‰é€£ç¶šã—ãŸæ•°å­—ã§æ§‹æˆã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @param start ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã®é–‹å§‹æ•°å­—
+	 * @return æ‰‹æœ­ãŒæŒ‡å®šã•ã‚ŒãŸæ•°å­—ã‹ã‚‰é€£ç¶šã—ãŸæ•°å­—ã§æ§‹æˆã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹
 	 */
 	public boolean isSequentialFrom(int start) {
 		int jokerRemain = getJoker();
@@ -142,16 +142,16 @@ public class Hand implements Iterable<Card> {
 		return true;
 	}
 	/**
-	 * èD‚ª˜A‘±‚µ‚½”š‚Å\¬‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * @return èD‚ª˜A‘±‚µ‚½”š‚Å\¬‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+	 * æ‰‹æœ­ãŒé€£ç¶šã—ãŸæ•°å­—ã§æ§‹æˆã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @return æ‰‹æœ­ãŒé€£ç¶šã—ãŸæ•°å­—ã§æ§‹æˆã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹
 	 */
 	public boolean isSequential() {
 		return isSequentialFrom(Math.min(getLowestNumber(), 10));
 	}
 	/**
-	 * èD‚ª‘S‚Ä“¯‚¶ƒ}[ƒN‚Å‚ ‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * ƒWƒ‡[ƒJ[‚Í–³‹‚³‚ê‚éBB
-	 * @return èD‚ª‘S‚Ä“¯‚¶ƒ}[ƒN‚Å‚ ‚é‚©‚Ç‚¤‚©
+	 * æ‰‹æœ­ãŒå…¨ã¦åŒã˜ãƒãƒ¼ã‚¯ã§ã‚ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚ã€‚
+	 * @return æ‰‹æœ­ãŒå…¨ã¦åŒã˜ãƒãƒ¼ã‚¯ã§ã‚ã‚‹ã‹ã©ã†ã‹
 	 */
 	public boolean isSameSuit() {
 		Suit suit = null;

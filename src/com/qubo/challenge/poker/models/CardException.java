@@ -1,29 +1,29 @@
 package com.qubo.challenge.poker.models;
 
 /**
- * ƒ|[ƒJ[ƒAƒvƒŠƒP[ƒVƒ‡ƒ“ŒÅ—L‚Ì—áŠO
+ * ãƒãƒ¼ã‚«ãƒ¼ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³å›ºæœ‰ã®ä¾‹å¤–
  * @author Qubo
  */
 public class CardException extends Exception {
-	/** ƒVƒŠƒAƒ‹ƒo[ƒWƒ‡ƒ“‚t‚h‚c */
+	/** ã‚·ãƒªã‚¢ãƒ«ãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼µï¼©ï¼¤ */
 	private static final long serialVersionUID = 3983999438471225539L;
 
-	/** •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^ */
+	/** æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ */
 	public CardException() { }
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param message ƒGƒ‰[ƒƒbƒZ[ƒW
-	 * @param throwable “à•”ƒGƒ‰[
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param message ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @param throwable å†…éƒ¨ã‚¨ãƒ©ãƒ¼
 	 */
 	public CardException(String message, Throwable throwable) { super(message, throwable); }
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param message ƒGƒ‰[ƒƒbƒZ[ƒW
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param message ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	 */
 	public CardException(String message) { super(message); }
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param throwable “à•”ƒGƒ‰[
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param throwable å†…éƒ¨ã‚¨ãƒ©ãƒ¼
 	 */
 	public CardException(Throwable throwable) { super(throwable); }
 

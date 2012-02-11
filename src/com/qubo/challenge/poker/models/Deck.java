@@ -6,31 +6,31 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * ƒgƒ‰ƒ“ƒv‚Ì‚PƒZƒbƒgiƒfƒbƒLj‚ğ•\Œ»‚·‚éƒNƒ‰ƒXB
+ * ãƒˆãƒ©ãƒ³ãƒ—ã®ï¼‘ã‚»ãƒƒãƒˆï¼ˆï¼ãƒ‡ãƒƒã‚­ï¼‰ã‚’è¡¨ç¾ã™ã‚‹ã‚¯ãƒ©ã‚¹ã€‚
  * @author Qubo
  */
 public class Deck {
-	/** ƒfƒbƒL“à‚ÉŠÜ‚Ş‚±‚Æ‚Ì‚Å‚«‚éƒWƒ‡[ƒJ[‚ÌÅ‘å–‡” */
+	/** ãƒ‡ãƒƒã‚­å†…ã«å«ã‚€ã“ã¨ã®ã§ãã‚‹ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æœ€å¤§æšæ•° */
 	public static final int JOKER_COUNT_MAX = 2;
-	/** ƒfƒbƒL“à‚ÉŒğŠ·‚Å‚«‚éƒJ[ƒh‚ª‘«‚è‚È‚¢ê‡‚É”­¶ */
-	public static final String ERROR_DECK_CARD_DEFICIT = "ƒfƒbƒL‚ÉƒJ[ƒh‚ª{0}–‡‘«‚è‚Ü‚¹‚ñI";
-	/** ƒWƒ‡[ƒJ[‚Ì–‡”w’è‚ª‚¨‚©‚µ‚¢ê‡‚É”­¶‚·‚é—áŠO‚ÌƒƒbƒZ[ƒW */
-	public static final String ERROR_JOKER_COUNT_RANGE = "ƒWƒ‡[ƒJ[‚Ì”‚Í0–‡`2–‡‚ÌŠÔ‚Åİ’è‚µ‚Ä‚­‚¾‚³‚¢I";
+	/** ãƒ‡ãƒƒã‚­å†…ã«äº¤æ›ã§ãã‚‹ã‚«ãƒ¼ãƒ‰ãŒè¶³ã‚Šãªã„å ´åˆã«ç™ºç”Ÿ */
+	public static final String ERROR_DECK_CARD_DEFICIT = "ãƒ‡ãƒƒã‚­ã«ã‚«ãƒ¼ãƒ‰ãŒ{0}æšè¶³ã‚Šã¾ã›ã‚“ï¼";
+	/** ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°æŒ‡å®šãŒãŠã‹ã—ã„å ´åˆã«ç™ºç”Ÿã™ã‚‹ä¾‹å¤–ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ */
+	public static final String ERROR_JOKER_COUNT_RANGE = "ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°ã¯0æšï½2æšã®é–“ã§è¨­å®šã—ã¦ãã ã•ã„ï¼";
 	private static final Random random = new Random();
 	private final List<Card> cards;
 	private final List<Card> discardPile;
 	private final int jokerCount;
 
 	/**
-	 * ƒfƒbƒL‚Ì’†‚ÉŠÜ‚Ü‚ê‚éƒWƒ‡[ƒJ[‚Ì”‚ğæ“¾‚·‚é
-	 * @return ƒWƒ‡[ƒJ[‚Ì”
+	 * ãƒ‡ãƒƒã‚­ã®ä¸­ã«å«ã¾ã‚Œã‚‹ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°ã‚’å–å¾—ã™ã‚‹
+	 * @return ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°
 	 */
 	public int getJokerCount() { return jokerCount; }
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^B
-	 * @param jokerCount ƒWƒ‡[ƒJ[‚Ì–‡”
-	 * @throws CardException ƒWƒ‡[ƒJ[‚Ì–‡”w’è‚ª‚¨‚©‚µ‚¢ê‡‚É•\¦
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
+	 * @param jokerCount ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°
+	 * @throws CardException ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°æŒ‡å®šãŒãŠã‹ã—ã„å ´åˆã«è¡¨ç¤º
 	 */
 	public Deck(int jokerCount) throws CardException {
 		if (jokerCount < 0 || jokerCount > JOKER_COUNT_MAX) throw new CardException(ERROR_JOKER_COUNT_RANGE);
@@ -49,28 +49,28 @@ public class Deck {
 			cards.add(new Card(Suit.Joker, Card.RAW_VALUE_JOKER));
 		}
 	}
-	/** •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^BƒWƒ‡[ƒJ[‚ğŠÜ‚Ü‚È‚¢‘S52–‡‚Å\¬‚³‚ê‚éB
+	/** æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã‚’å«ã¾ãªã„å…¨52æšã§æ§‹æˆã•ã‚Œã‚‹ã€‚
 	 * @throws CardException */
 	public Deck() throws CardException { this(0); }
 
 	/**
-	 * ƒfƒbƒL‚Ì’†‚©‚çƒ‰ƒ“ƒ_ƒ€‚É5–‡”²‚«o‚µA‚»‚ê‚ğƒRƒ“ƒXƒgƒ‰ƒNƒ^ˆø”‚Æ‚µ‚Ä
-	 * {@link Hand}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µA•Ô‚·B<br />
-	 * ƒfƒbƒL‚Ì’†‚ÌƒJ[ƒh–‡”‚ª5–‡ˆÈ‰º‚Ìê‡‚ÍA{@code null}‚ğ•Ô‚·B
-	 * @return {@link Hand}ƒCƒ“ƒXƒ^ƒ“ƒX
-	 * @throws CardException ƒJ[ƒh‚ª‘«‚è‚È‚¢ê‡‚É”­¶
+	 * ãƒ‡ãƒƒã‚­ã®ä¸­ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«5æšæŠœãå‡ºã—ã€ãã‚Œã‚’ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å¼•æ•°ã¨ã—ã¦
+	 * {@link Hand}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã€è¿”ã™ã€‚<br />
+	 * ãƒ‡ãƒƒã‚­ã®ä¸­ã®ã‚«ãƒ¼ãƒ‰æšæ•°ãŒ5æšä»¥ä¸‹ã®å ´åˆã¯ã€{@code null}ã‚’è¿”ã™ã€‚
+	 * @return {@link Hand}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @throws CardException ã‚«ãƒ¼ãƒ‰ãŒè¶³ã‚Šãªã„å ´åˆã«ç™ºç”Ÿ
 	 */
 	public Hand deal() throws CardException {
 		if (cards.size() < 5) throw new CardException(MessageFormat.format(ERROR_DECK_CARD_DEFICIT, 5 - cards.size()));
 		return new Hand(draw(), draw(), draw(), draw(), draw());
 	}
 	/**
-	 * {@link Hand}ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìè‚Ì’†‚©‚çA
-	 * {@code indices}‚Åw’è‚³‚ê‚½ˆÊ’u‚É‚ ‚éƒJ[ƒh‚ğÌ‚ÄA
-	 * Ì‚Ä‚½–‡”‚¾‚¯V‚½‚ÉƒfƒbƒL‚©‚çƒJ[ƒh‚ğ•â[‚·‚éB<br />
-	 * @param hand ŒğŠ·‘ÎÛ‚ÌèD
-	 * @param indices ŒğŠ·‚µ‚½‚¢ƒJ[ƒh‚ÌˆÊ’u‚ğ•\‚µ‚½”z—ñ
-	 * @throws CardException ƒJ[ƒh‚ª‘«‚è‚È‚¢ê‡‚É”­¶
+	 * {@link Hand}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®æ‰‹ã®ä¸­ã‹ã‚‰ã€
+	 * {@code indices}ã§æŒ‡å®šã•ã‚ŒãŸä½ç½®ã«ã‚ã‚‹ã‚«ãƒ¼ãƒ‰ã‚’æ¨ã¦ã€
+	 * æ¨ã¦ãŸæšæ•°ã ã‘æ–°ãŸã«ãƒ‡ãƒƒã‚­ã‹ã‚‰ã‚«ãƒ¼ãƒ‰ã‚’è£œå……ã™ã‚‹ã€‚<br />
+	 * @param hand äº¤æ›å¯¾è±¡ã®æ‰‹æœ­
+	 * @param indices äº¤æ›ã—ãŸã„ã‚«ãƒ¼ãƒ‰ã®ä½ç½®ã‚’è¡¨ã—ãŸé…åˆ—
+	 * @throws CardException ã‚«ãƒ¼ãƒ‰ãŒè¶³ã‚Šãªã„å ´åˆã«ç™ºç”Ÿ
 	 */
 	public void change(Hand hand, int... indices) throws CardException {
 		if (cards.size() < indices.length) throw new CardException(MessageFormat.format(ERROR_DECK_CARD_DEFICIT, indices.length - cards.size()));
@@ -82,13 +82,13 @@ public class Deck {
 		}
 	}
 	/**
-	 * ƒfƒbƒL‚Ì’†‚Éc‚Á‚½ƒJ[ƒh‚Ì–‡”‚ğæ“¾‚·‚é
-	 * @return c‚Á‚½ƒJ[ƒh–‡”
+	 * ãƒ‡ãƒƒã‚­ã®ä¸­ã«æ®‹ã£ãŸã‚«ãƒ¼ãƒ‰ã®æšæ•°ã‚’å–å¾—ã™ã‚‹
+	 * @return æ®‹ã£ãŸã‚«ãƒ¼ãƒ‰æšæ•°
 	 */
 	public int getRemainings() { return cards.size(); }
 	/**
-	 * ƒfƒbƒL‚©‚çƒ‰ƒ“ƒ_ƒ€‚É{@link Card}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ‘I‚ñ‚Å•Ô‚·B
-	 * ‘I‘ğ‚³‚ê‚½{@link Card}ƒCƒ“ƒXƒ^ƒ“ƒX‚ÍAƒfƒbƒL‚©‚çæ‚èœ‚©‚ê‚éB
+	 * ãƒ‡ãƒƒã‚­ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«{@link Card}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’é¸ã‚“ã§è¿”ã™ã€‚
+	 * é¸æŠã•ã‚ŒãŸ{@link Card}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯ã€ãƒ‡ãƒƒã‚­ã‹ã‚‰å–ã‚Šé™¤ã‹ã‚Œã‚‹ã€‚
 	 * @return
 	 */
 	private Card draw() {

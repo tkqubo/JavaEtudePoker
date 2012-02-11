@@ -5,30 +5,30 @@ import java.text.MessageFormat;
 import com.qubo.Utils;
 
 /**
- * ‚Ù‚Æ‚ñ‚Ç‚Ìƒrƒ…[‚ÌŠî‘b‚Æ‚È‚é’ŠÛƒNƒ‰ƒXB\‘¢“I‚ÉˆÈ‰º‚Ì‹@”\‚ğÀ‘•‚·‚éB
+ * ã»ã¨ã‚“ã©ã®ãƒ“ãƒ¥ãƒ¼ã®åŸºç¤ã¨ãªã‚‹æŠ½è±¡ã‚¯ãƒ©ã‚¹ã€‚æ§‹é€ çš„ã«ä»¥ä¸‹ã®æ©Ÿèƒ½ã‚’å®Ÿè£…ã™ã‚‹ã€‚
  * <ul>
- * <li>˜gü‚É‚æ‚éƒŒƒCƒAƒEƒg</li>
- * <li>ƒ†[ƒU[“ü—Í‚ğ—v‹‚µA‚»‚ê‚ğ{@code T}Œ^‚É•ÏŠ·‚µæ“¾‚·‚é</li>
- * <li>“¾‚ç‚ê‚½{@code T}Œ^ƒCƒ“ƒXƒ^ƒ“ƒX‚ğŒ³‚ÉAŸ‚Ì‰æ–Ê‚ğæ“¾‚·‚é</li>
+ * <li>æ ç·šã«ã‚ˆã‚‹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ</li>
+ * <li>ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›ã‚’è¦æ±‚ã—ã€ãã‚Œã‚’{@code T}å‹ã«å¤‰æ›ã—å–å¾—ã™ã‚‹</li>
+ * <li>å¾—ã‚‰ã‚ŒãŸ{@code T}å‹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å…ƒã«ã€æ¬¡ã®ç”»é¢ã‚’å–å¾—ã™ã‚‹</li>
  * </ul>
  * @author Qubo
- * @param <T> ƒ†[ƒU[“ü—ÍŒ^
+ * @param <T> ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›å‹
  */
 public abstract class AbstractView<T> implements View {
-	/** ˜güƒŒƒCƒAƒEƒg‚Ìƒwƒbƒ_•”•ª */
-	public static final String HEAD 			= "„¬„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„­";
-	/** ˜güƒŒƒCƒAƒEƒg‚Ìƒtƒbƒ^•”•ª */
-	public static final String TAIL 			= "„¯„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„®";
-	/** ˜güƒŒƒCƒAƒEƒg‚ÌƒZƒpƒŒ[ƒ^ */
-	public static final String SEPARATOR 		= "„°„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„²";
-	/** ˜güƒŒƒCƒAƒEƒg‚ÌƒZƒpƒŒ[ƒ^i×j */
-	public static final String THINE_SEPARATOR	= "„µ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„·";
-	/** ˜güƒŒƒCƒAƒEƒg‚Ì• */
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ãƒ˜ãƒƒãƒ€éƒ¨åˆ† */
+	public static final String HEAD 			= "â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“";
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ãƒ•ãƒƒã‚¿éƒ¨åˆ† */
+	public static final String TAIL 			= "â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›";
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ */
+	public static final String SEPARATOR 		= "â”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«";
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ï¼ˆç´°ï¼‰ */
+	public static final String THINE_SEPARATOR	= "â” â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¨";
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®å¹… */
 	public static final int LAYOUT_WIDTH = 72;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param name ƒrƒ…[–¼
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param name ãƒ“ãƒ¥ãƒ¼å
 	 */
 	public AbstractView(String name) {
 		this.name = name;
@@ -42,7 +42,7 @@ public abstract class AbstractView<T> implements View {
 	public final View view() {
 		// render header
 		printHead();
-		printLine("¡" + name);
+		printLine("â– " + name);
 		printSeparator();
 
 		renderBody();
@@ -55,43 +55,43 @@ public abstract class AbstractView<T> implements View {
 		return view(input);
 	}
 
-	/** ƒrƒ…[‚Ì“à—e‚ğƒŒƒ“ƒ_ƒŠƒ“ƒO‚·‚éB */
+	/** ãƒ“ãƒ¥ãƒ¼ã®å†…å®¹ã‚’ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã™ã‚‹ã€‚ */
 	protected abstract void renderBody();
 	/**
-	 * ƒ†[ƒU[“ü—Í‚ğ‹‚ßA{@code T}Œ^‚Å•Ô‚·
-	 * @return {@code T}Œ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
+	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›ã‚’æ±‚ã‚ã€{@code T}å‹ã§è¿”ã™
+	 * @return {@code T}å‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	protected abstract T requestUserInput();
 	/**
-	 * ƒ†[ƒU[“ü—Í‚ÉŠî‚Ã‚¢‚ÄŒ‹‰Ê‚ğ•\¦‚µAŸ‚É•\¦‚·‚éƒrƒ…[‚ğæ“¾‚·‚é
-	 * @param input ƒ†[ƒU[“ü—Í
-	 * @return ƒrƒ…[
+	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›ã«åŸºã¥ã„ã¦çµæœã‚’è¡¨ç¤ºã—ã€æ¬¡ã«è¡¨ç¤ºã™ã‚‹ãƒ“ãƒ¥ãƒ¼ã‚’å–å¾—ã™ã‚‹
+	 * @param input ãƒ¦ãƒ¼ã‚¶ãƒ¼å…¥åŠ›
+	 * @return ãƒ“ãƒ¥ãƒ¼
 	 */
 	protected abstract View view(T input);
 
 
-	/** ˜güƒŒƒCƒAƒEƒg‚Ìƒwƒbƒ_•”•ª‚ğ•\¦‚·‚é */
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ãƒ˜ãƒƒãƒ€éƒ¨åˆ†ã‚’è¡¨ç¤ºã™ã‚‹ */
 	protected void printHead() { print(HEAD); }
-	/** ˜güƒŒƒCƒAƒEƒg‚Ìƒtƒbƒ^•”•ª‚ğ•\¦‚·‚é */
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ãƒ•ãƒƒã‚¿éƒ¨åˆ†ã‚’è¡¨ç¤ºã™ã‚‹ */
 	protected void printTail() { print(TAIL); }
-	/** ˜güƒŒƒCƒAƒEƒg‚ÌƒZƒpƒŒ[ƒ^‚ğ•\¦‚·‚é */
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ã‚’è¡¨ç¤ºã™ã‚‹ */
 	protected void printSeparator() { print(SEPARATOR); }
-	/** ˜güƒŒƒCƒAƒEƒg‚ÌƒZƒpƒŒ[ƒ^i×j‚ğ•\¦‚·‚é */
+	/** æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ï¼ˆç´°ï¼‰ã‚’è¡¨ç¤ºã™ã‚‹ */
 	protected void printThinSeparator() { print(THINE_SEPARATOR); }
 	/**
-	 * ˜güƒŒƒCƒAƒEƒg“à‚É•¶š—ñ‚ğ•\¦‚·‚é
-	 * @param pattern •¶š—ñƒtƒH[ƒ}ƒbƒg
-	 * @param objects ƒtƒH[ƒ}ƒbƒg‚Ìˆø”
+	 * æ ç·šãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆå†…ã«æ–‡å­—åˆ—ã‚’è¡¨ç¤ºã™ã‚‹
+	 * @param pattern æ–‡å­—åˆ—ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param objects ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®å¼•æ•°
 	 */
 	protected void printLine(String pattern, Object...objects) {
 		String message = MessageFormat.format(pattern, objects);
 		message = Utils.rpad(message, LAYOUT_WIDTH);
-		System.out.println("„« " + message + " „«");
+		System.out.println("â”ƒ " + message + " â”ƒ");
 	}
 	/**
-	 * •¶š—ñ‚ğ•\¦‚·‚é
-	 * @param pattern •¶š—ñƒtƒH[ƒ}ƒbƒg
-	 * @param objects ƒtƒH[ƒ}ƒbƒg‚Ìˆø”
+	 * æ–‡å­—åˆ—ã‚’è¡¨ç¤ºã™ã‚‹
+	 * @param pattern æ–‡å­—åˆ—ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param objects ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®å¼•æ•°
 	 */
 	protected void print(String pattern, Object...objects) {
 		System.out.println(MessageFormat.format(pattern, objects));

@@ -10,81 +10,81 @@ import org.junit.Test;
 import com.qubo.Utils;
 
 /**
- * {@link Utils}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link Utils}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class UtilsTest {
 
-	/** {@link Utils#toFullWidth(char)}‚ÌƒeƒXƒg */
+	/** {@link Utils#toFullWidth(char)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testToFullWidth() {
-		doTestToFullWidth('0', '‚O');
-		doTestToFullWidth('1', '‚P');
-		doTestToFullWidth('2', '‚Q');
-		doTestToFullWidth('3', '‚R');
-		doTestToFullWidth('4', '‚S');
-		doTestToFullWidth('5', '‚T');
-		doTestToFullWidth('6', '‚U');
-		doTestToFullWidth('7', '‚V');
-		doTestToFullWidth('8', '‚W');
-		doTestToFullWidth('9', '‚X');
-		doTestToFullWidth('a', '‚');
-		doTestToFullWidth('b', '‚‚');
-		doTestToFullWidth('c', '‚ƒ');
-		doTestToFullWidth('j', '‚Š');
-		doTestToFullWidth('q', '‚‘');
-		doTestToFullWidth('k', '‚‹');
-		doTestToFullWidth('A', '‚`');
-		doTestToFullWidth('B', '‚a');
-		doTestToFullWidth('C', '‚b');
-		doTestToFullWidth('D', '‚c');
-		doTestToFullWidth('J', '‚i');
-		doTestToFullWidth('Q', '‚p');
-		doTestToFullWidth('K', '‚j');
-		doTestToFullWidth('+', '{');
-		doTestToFullWidth('*', '–');
-		doTestToFullWidth('^', 'O');
-		doTestToFullWidth(' ', '@');
+		doTestToFullWidth('0', 'ï¼');
+		doTestToFullWidth('1', 'ï¼‘');
+		doTestToFullWidth('2', 'ï¼’');
+		doTestToFullWidth('3', 'ï¼“');
+		doTestToFullWidth('4', 'ï¼”');
+		doTestToFullWidth('5', 'ï¼•');
+		doTestToFullWidth('6', 'ï¼–');
+		doTestToFullWidth('7', 'ï¼—');
+		doTestToFullWidth('8', 'ï¼˜');
+		doTestToFullWidth('9', 'ï¼™');
+		doTestToFullWidth('a', 'ï½');
+		doTestToFullWidth('b', 'ï½‚');
+		doTestToFullWidth('c', 'ï½ƒ');
+		doTestToFullWidth('j', 'ï½Š');
+		doTestToFullWidth('q', 'ï½‘');
+		doTestToFullWidth('k', 'ï½‹');
+		doTestToFullWidth('A', 'ï¼¡');
+		doTestToFullWidth('B', 'ï¼¢');
+		doTestToFullWidth('C', 'ï¼£');
+		doTestToFullWidth('D', 'ï¼¤');
+		doTestToFullWidth('J', 'ï¼ª');
+		doTestToFullWidth('Q', 'ï¼±');
+		doTestToFullWidth('K', 'ï¼«');
+		doTestToFullWidth('+', 'ï¼‹');
+		doTestToFullWidth('*', 'ï¼Š');
+		doTestToFullWidth('^', 'ï¼¾');
+		doTestToFullWidth(' ', 'ã€€');
 	}
 	/**
-	 * {@link #testToFullWidth()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param input “ü—Í’l
-	 * @param exp —\‘z’l
+	 * {@link #testToFullWidth()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param input å…¥åŠ›å€¤
+	 * @param exp äºˆæƒ³å€¤
 	 */
 	private void doTestToFullWidth(char input, char exp) {
 		char result = Utils.toFullWidth(input);
 		assertThat(result, is(exp));
 	}
 
-	/** {@link Utils#rpad(String, int)}‚ÌƒeƒXƒg */
+	/** {@link Utils#rpad(String, int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testRpad() {
 		doTestPad("", 4, true, "    ");
 		doTestPad("test", 10, true, "test      ");
-		doTestPad("‘SŠp", 6, true, "‘SŠp  ");
+		doTestPad("å…¨è§’", 6, true, "å…¨è§’  ");
 		doTestPad("ThisIsATest", 8, true, "ThisI...");
-		doTestPad("‘SŠpƒeƒXƒg", 6, true, "‘S... ");
+		doTestPad("å…¨è§’ãƒ†ã‚¹ãƒˆ", 6, true, "å…¨... ");
 	}
-	/** {@link Utils#lpad(String, int)}‚ÌƒeƒXƒg */
+	/** {@link Utils#lpad(String, int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testLpad() {
 		doTestPad("", 4, false, "    ");
 		doTestPad("test", 10, false, "      test");
-		doTestPad("‘SŠp", 6, false, "  ‘SŠp");
+		doTestPad("å…¨è§’", 6, false, "  å…¨è§’");
 		doTestPad("ThisIsATest", 8, false, "ThisI...");
-		doTestPad("‘SŠpƒeƒXƒg", 6, false, " ‘S...");
+		doTestPad("å…¨è§’ãƒ†ã‚¹ãƒˆ", 6, false, " å…¨...");
 	}
 	/**
-	 * {@link #testRpad()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param text •¶š—ñ
-	 * @param length •¶š—ñ’·
-	 * @param rpad {@code true}‚Ìê‡‚Í{@link Utils#rpad(String, int)}‚ğA{@code false}‚Ìê‡‚Í{@link Utils#lpad(String, int)}‚ğŒÄ‚Ño‚·
-	 * @param expected —\‘z•¶š—ñ
+	 * {@link #testRpad()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param text æ–‡å­—åˆ—
+	 * @param length æ–‡å­—åˆ—é•·
+	 * @param rpad {@code true}ã®å ´åˆã¯{@link Utils#rpad(String, int)}ã‚’ã€{@code false}ã®å ´åˆã¯{@link Utils#lpad(String, int)}ã‚’å‘¼ã³å‡ºã™
+	 * @param expected äºˆæƒ³æ–‡å­—åˆ—
 	 */
 	private void doTestPad(String text, int length, boolean rpad, String expected) {
 		assertThat(rpad ? Utils.rpad(text, length) : Utils.lpad(text, length), is(expected));
 	}
-	/** {@link Utils#isBlank(String)}‚ÌƒeƒXƒg */
+	/** {@link Utils#isBlank(String)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsBlank() {
 		assertTrue(Utils.isBlank(null));
@@ -92,7 +92,7 @@ public class UtilsTest {
 		assertTrue(Utils.isBlank("        "));
 		assertFalse(Utils.isBlank("a"));
 		assertFalse(Utils.isBlank("test test"));
-		assertFalse(Utils.isBlank("@@@@")); // ‘SŠp”ñ‘Î‰I
+		assertFalse(Utils.isBlank("ã€€ã€€ã€€ã€€")); // å…¨è§’éå¯¾å¿œï¼
 	}
 
 }

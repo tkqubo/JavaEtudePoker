@@ -7,18 +7,18 @@ import java.io.UnsupportedEncodingException;
 import java.text.MessageFormat;
 
 /**
- * •Ö—˜ŠÖ”‚ðW‚ß‚½ƒNƒ‰ƒX
+ * ä¾¿åˆ©é–¢æ•°ã‚’é›†ã‚ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class Utils {
-	/** ‘SŠp•¶ŽšŒŸo‚Ì‚½‚ß‚ÌƒGƒ“ƒR[ƒfƒBƒ“ƒO */
+	/** å…¨è§’æ–‡å­—æ¤œå‡ºã®ãŸã‚ã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚° */
 	private static final String WINDOWS31J = "Windows-31J";
-	/** {@link #pad(String, int, boolean)}‚Å“à•”“I‚ÉŽg‚¤È—ª‹L† */
+	/** {@link #pad(String, int, boolean)}ã§å†…éƒ¨çš„ã«ä½¿ã†çœç•¥è¨˜å· */
 	private static final String ELLIPSIS = "...";
-	/** {@link #pad(String, int, boolean)}‚Å“à•”“I‚ÉŽg‚¤ƒpƒfƒBƒ“ƒO•¶Žš */
+	/** {@link #pad(String, int, boolean)}ã§å†…éƒ¨çš„ã«ä½¿ã†ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°æ–‡å­— */
 	private static final String PADDING = "                                                                                ";
 
-	/** ”¼Šp‹L†”z—ñ(”¼ŠpƒXƒy[ƒX‚ðœ‚­) */
+	/** åŠè§’è¨˜å·é…åˆ—(åŠè§’ã‚¹ãƒšãƒ¼ã‚¹ã‚’é™¤ã) */
 	private static final char[] SIGNS = {
 		'!', '#', '$', '%', '&', '(',
 		')', '*', '+', ',', '-', '.',
@@ -26,63 +26,63 @@ public class Utils {
 		'?', '@', '[', ']', '^', '_',
 		'{', '|', '}'
 	};
-	/** ”¼Šp”Žš‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍŠJŽnˆÊ’u */
+	/** åŠè§’æ•°å­—ã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²é–‹å§‹ä½ç½® */
 	private static final int NUM_HALF_END = 0x39;
-	/** ”¼Šp”Žš‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍI—¹ˆÊ’u */
+	/** åŠè§’æ•°å­—ã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²çµ‚äº†ä½ç½® */
 	private static final int NUM_HALF_START = 0x30;
-	/** ”¼Šp‘å•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍŠJŽnˆÊ’u */
+	/** åŠè§’å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²é–‹å§‹ä½ç½® */
 	private static final int CAPITAL_LETTER_START = 0x41;
-	/** ”¼Šp‘å•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍI—¹ˆÊ’u */
+	/** åŠè§’å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²çµ‚äº†ä½ç½® */
 	private static final int CAPITAL_LETTER_END = 0x5A;
-	/**”¼Šp¬•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍŠJŽnˆÊ’u */
+	/**åŠè§’å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²é–‹å§‹ä½ç½® */
 	private static final int SMALL_LETTER_START = 0x61;
-	/** ”¼Šp¬•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚ÌA•¶ŽšƒR[ƒhã‚Ì”ÍˆÍI—¹ˆÊ’u */
+	/** åŠè§’å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã®ã€æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã®ç¯„å›²çµ‚äº†ä½ç½® */
 	private static final int SMALL_LETTER_END = 0x7A;
-	/** •¶ŽšƒR[ƒhã‚Å‚ÌA”CˆÓ‚Ì”¼Šp‰p”Žš‚Æ‚»‚ê‚É‘Î‰ž‚·‚é‘SŠp‰p”Žš‚Ü‚Å‚Ì· */
-	private static final int OFFSET_TO_FULL_WIDTH = '‚`' - 'A';
+	/** æ–‡å­—ã‚³ãƒ¼ãƒ‰ä¸Šã§ã®ã€ä»»æ„ã®åŠè§’è‹±æ•°å­—ã¨ãã‚Œã«å¯¾å¿œã™ã‚‹å…¨è§’è‹±æ•°å­—ã¾ã§ã®å·® */
+	private static final int OFFSET_TO_FULL_WIDTH = 'ï¼¡' - 'A';
 
 	/**
-	 * ”¼Šp‚Ì‰p”‹L†‚ð‘SŠp‚É•ÏŠ·‚·‚éB”¼Šp‰p”‹L†ˆÈŠO‚Ì‚à‚Ì‚ª—^‚¦‚ç‚ê‚½ê‡A‚»‚Ì‚Ü‚Üˆø”‚Ì’l‚ð•Ô‚·B
-	 * @param value ”¼Šp‰p”‹L†
-	 * @return {@code value}‚É‘Î‰ž‚·‚é‘SŠp‰p”‹L†
+	 * åŠè§’ã®è‹±æ•°è¨˜å·ã‚’å…¨è§’ã«å¤‰æ›ã™ã‚‹ã€‚åŠè§’è‹±æ•°è¨˜å·ä»¥å¤–ã®ã‚‚ã®ãŒä¸Žãˆã‚‰ã‚ŒãŸå ´åˆã€ãã®ã¾ã¾å¼•æ•°ã®å€¤ã‚’è¿”ã™ã€‚
+	 * @param value åŠè§’è‹±æ•°è¨˜å·
+	 * @return {@code value}ã«å¯¾å¿œã™ã‚‹å…¨è§’è‹±æ•°è¨˜å·
 	 */
 	public static char toFullWidth(char value) {
 		if (isNumber((int) value) || isCapitalLetter((int) value) || isSmallLetter((int) value) || isSign(value)) {
 			return (char) ((int) value + OFFSET_TO_FULL_WIDTH);
-		} else if (value == ' ') { // ”¼ŠpƒXƒy[ƒX‚Ìê‡
-			return '@';
+		} else if (value == ' ') { // åŠè§’ã‚¹ãƒšãƒ¼ã‚¹ã®å ´åˆ
+			return 'ã€€';
 		} else {
 			return value;
 		}
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½•¶Žš‚ªA”¼Šp¬•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚©‚Ç‚¤‚©‚ðŽæ“¾‚·‚é
+	 * ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—ãŒã€åŠè§’å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 	 * @param c
-	 * @return {@code c}‚ª”¼Šp¬•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚©‚Ç‚¤‚©
+	 * @return {@code c}ãŒåŠè§’å°æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã‹ã©ã†ã‹
 	 */
 	private static boolean isSmallLetter(int c) {
 		return c >= SMALL_LETTER_START && c <= SMALL_LETTER_END;
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½•¶Žš‚ªA”¼Šp‘å•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚©‚Ç‚¤‚©‚ðŽæ“¾‚·‚é
+	 * ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—ãŒã€åŠè§’å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 	 * @param c
-	 * @return {@code c}‚ª”¼Šp‘å•¶ŽšƒAƒ‹ƒtƒ@ƒxƒbƒg‚©‚Ç‚¤‚©
+	 * @return {@code c}ãŒåŠè§’å¤§æ–‡å­—ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã‹ã©ã†ã‹
 	 */
 	private static boolean isCapitalLetter(int c) {
 		return c >= CAPITAL_LETTER_START && c <= CAPITAL_LETTER_END;
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½•¶Žš‚ªA”¼Šp”Žš‚©‚Ç‚¤‚©‚ðŽæ“¾‚·‚é
+	 * ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—ãŒã€åŠè§’æ•°å­—ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 	 * @param c
-	 * @return {@code c}‚ª”¼Šp”Žš‚©‚Ç‚¤‚©
+	 * @return {@code c}ãŒåŠè§’æ•°å­—ã‹ã©ã†ã‹
 	 */
 	private static boolean isNumber(int c) {
 		return c >= NUM_HALF_START && c <= NUM_HALF_END;
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½•¶Žš‚ªA”¼Šp‹L†‚©‚Ç‚¤‚©‚ðŽæ“¾‚·‚é
+	 * ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—ãŒã€åŠè§’è¨˜å·ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
 	 * @param c
-	 * @return {@code c}‚ª”¼Šp‹L†‚©‚Ç‚¤‚©
+	 * @return {@code c}ãŒåŠè§’è¨˜å·ã‹ã©ã†ã‹
 	 */
 	private static boolean isSign(char c) {
 		for (char sign : SIGNS) {
@@ -94,25 +94,25 @@ public class Utils {
 	}
 
 	/**
-	 * Žw’è‚³‚ê‚½•¶Žš—ñ’·‚É‚È‚é‚Ü‚ÅA—^‚¦‚ç‚ê‚½•¶Žš—ñ‚Ì‰E‘¤‚É‹ó”’‚ð’Ç‰Á‚µ‚Ä•Ô‚·B
-	 * @param text •¶Žš—ñ
-	 * @param totalLength •¶Žš—ñ’·
-	 * @return ƒpƒfƒBƒ“ƒO‚³‚ê‚½•¶Žš—ñ
+	 * æŒ‡å®šã•ã‚ŒãŸæ–‡å­—åˆ—é•·ã«ãªã‚‹ã¾ã§ã€ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—åˆ—ã®å³å´ã«ç©ºç™½ã‚’è¿½åŠ ã—ã¦è¿”ã™ã€‚
+	 * @param text æ–‡å­—åˆ—
+	 * @param totalLength æ–‡å­—åˆ—é•·
+	 * @return ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ã•ã‚ŒãŸæ–‡å­—åˆ—
 	 */
 	public static String rpad(String text, int totalLength) { return pad(text, totalLength, false); }
 	/**
-	 * Žw’è‚³‚ê‚½•¶Žš—ñ’·‚É‚È‚é‚Ü‚ÅA—^‚¦‚ç‚ê‚½•¶Žš—ñ‚Ì¶‘¤‚É‹ó”’‚ð’Ç‰Á‚µ‚Ä•Ô‚·B
-	 * @param text •¶Žš—ñ
-	 * @param totalLength •¶Žš—ñ’·
-	 * @return ƒpƒfƒBƒ“ƒO‚³‚ê‚½•¶Žš—ñ
+	 * æŒ‡å®šã•ã‚ŒãŸæ–‡å­—åˆ—é•·ã«ãªã‚‹ã¾ã§ã€ä¸Žãˆã‚‰ã‚ŒãŸæ–‡å­—åˆ—ã®å·¦å´ã«ç©ºç™½ã‚’è¿½åŠ ã—ã¦è¿”ã™ã€‚
+	 * @param text æ–‡å­—åˆ—
+	 * @param totalLength æ–‡å­—åˆ—é•·
+	 * @return ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ã•ã‚ŒãŸæ–‡å­—åˆ—
 	 */
 	public static String lpad(String text, int totalLength) { return pad(text, totalLength, true); }
 	/**
-	 * {@link #rpad(String, int)}‚¨‚æ‚Ñ{@link #lpad(String, int)}—p‚Ì“à•”ŠÖ”
-	 * @param text •¶Žš—ñ
-	 * @param totalLength •¶Žš—ñ’·
-	 * @param doLeftPad ‰E‹l‚ß‚©¶‹l‚ß‚©‚ðŽw’è
-	 * @return ƒpƒfƒBƒ“ƒO‚³‚ê‚½•¶Žš—ñ
+	 * {@link #rpad(String, int)}ãŠã‚ˆã³{@link #lpad(String, int)}ç”¨ã®å†…éƒ¨é–¢æ•°
+	 * @param text æ–‡å­—åˆ—
+	 * @param totalLength æ–‡å­—åˆ—é•·
+	 * @param doLeftPad å³è©°ã‚ã‹å·¦è©°ã‚ã‹ã‚’æŒ‡å®š
+	 * @return ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°ã•ã‚ŒãŸæ–‡å­—åˆ—
 	 */
 	private static String pad(String text, int totalLength, boolean doLeftPad) {
 		String result = text;
@@ -135,12 +135,12 @@ public class Utils {
 		return result;
 	}
 	/**
-	 * ƒRƒ“ƒ\[ƒ‹‚Åƒ†[ƒU[‚É‘Î‚µ‚Ä•¶Žš‚Ì“ü—Í‚ð‹‚ß‚éB
-	 * “ü—Í•¶Žš‚ª{@code candidates}‚ÉŽw’è‚³‚ê‚½•¶Žš”z—ñ‚Ì’†‚É‘¶Ý‚µ‚È‚¢ê‡AÄ“x“ü—Í‚ð‹‚ß‚éB
-	 * ‚Ü‚½Aƒ†[ƒU[‚ª‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ð‰Ÿ‚µ‚½ê‡A{@code defaultChar}‚ª“ü—Í‚Æ‚µ‚Ä“K—p‚³‚ê‚éB
-	 * @param candidates •¶ŽšŒó•â”z—ñ
-	 * @param defaultChar ƒfƒtƒHƒ‹ƒg‚Ì•¶Žš
-	 * @return ƒ†[ƒU[‚Ì“ü—Í•¶Žš
+	 * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã§ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«å¯¾ã—ã¦æ–‡å­—ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‹ã€‚
+	 * å…¥åŠ›æ–‡å­—ãŒ{@code candidates}ã«æŒ‡å®šã•ã‚ŒãŸæ–‡å­—é…åˆ—ã®ä¸­ã«å­˜åœ¨ã—ãªã„å ´åˆã€å†åº¦å…¥åŠ›ã‚’æ±‚ã‚ã‚‹ã€‚
+	 * ã¾ãŸã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã—ãŸå ´åˆã€{@code defaultChar}ãŒå…¥åŠ›ã¨ã—ã¦é©ç”¨ã•ã‚Œã‚‹ã€‚
+	 * @param candidates æ–‡å­—å€™è£œé…åˆ—
+	 * @param defaultChar ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æ–‡å­—
+	 * @return ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®å…¥åŠ›æ–‡å­—
 	 */
 	public static char promptChar(char[] candidates, char defaultChar) {
 		String candidatesStr = String.copyValueOf(candidates).toLowerCase();
@@ -156,20 +156,20 @@ public class Utils {
 				} else if (line.length() == 0) {
 					return defaultChar;
 				}
-				System.out.println("³‚µ‚¢’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢I");
+				System.out.println("æ­£ã—ã„å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		throw new RuntimeException("“ž’B•s”\‚ÈƒR[ƒh‚É’B‚µ‚Ü‚µ‚½I");
+		throw new RuntimeException("åˆ°é”ä¸èƒ½ãªã‚³ãƒ¼ãƒ‰ã«é”ã—ã¾ã—ãŸï¼");
 	}
 	/**
-	 * ƒRƒ“ƒ\[ƒ‹‚Åƒ†[ƒU[‚É‘Î‚µ‚Ä®”’l‚Ì“ü—Í‚ð‹‚ß‚éB
-	 * ”’l‚ª{@code min}`{@code max}‚Ì”ÍˆÍŠO‚¾‚Á‚½ê‡A‚¨‚æ‚Ñ®”’lˆÈŠO‚ª“ü—Í‚³‚ê‚½ê‡AÄ“x“ü—Í‚ð‹‚ß‚éB
-	 * ‚Ü‚½Aƒ†[ƒU[‚ª‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ð‰Ÿ‚µ‚½ê‡A{@code null}‚ð•Ô‚·B
-	 * @param min ‹‚ß‚é®”‚ÌÅ¬’l
-	 * @param max ‹‚ß‚é®”‚ÌÅ‘å’l
-	 * @return ƒ†[ƒU[‚Ì“ü—Í”’l
+	 * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã§ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«å¯¾ã—ã¦æ•´æ•°å€¤ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‹ã€‚
+	 * æ•°å€¤ãŒ{@code min}ï½ž{@code max}ã®ç¯„å›²å¤–ã ã£ãŸå ´åˆã€ãŠã‚ˆã³æ•´æ•°å€¤ä»¥å¤–ãŒå…¥åŠ›ã•ã‚ŒãŸå ´åˆã€å†åº¦å…¥åŠ›ã‚’æ±‚ã‚ã‚‹ã€‚
+	 * ã¾ãŸã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã—ãŸå ´åˆã€{@code null}ã‚’è¿”ã™ã€‚
+	 * @param min æ±‚ã‚ã‚‹æ•´æ•°ã®æœ€å°å€¤
+	 * @param max æ±‚ã‚ã‚‹æ•´æ•°ã®æœ€å¤§å€¤
+	 * @return ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®å…¥åŠ›æ•°å€¤
 	 */
 	public static Integer promptInteger(int min, int max) {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -185,22 +185,22 @@ public class Utils {
 					if (value >= min && value <= max) {
 						return value;
 					} else {
-						System.out.println(MessageFormat.format("{0}~{1}‚Ì”ÍˆÍ‚Å”’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢I", min, max));
+						System.out.println(MessageFormat.format("{0}~{1}ã®ç¯„å›²ã§æ•°å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼", min, max));
 					}
 
 				} catch (NumberFormatException e) {
-					System.out.println("³‚µ‚¢”’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢I");
+					System.out.println("æ­£ã—ã„æ•°å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼");
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		throw new RuntimeException("“ž’B•s”\‚ÈƒR[ƒh‚É’B‚µ‚Ü‚µ‚½I");
+		throw new RuntimeException("åˆ°é”ä¸èƒ½ãªã‚³ãƒ¼ãƒ‰ã«é”ã—ã¾ã—ãŸï¼");
 	}
 	/**
-	 * •¶Žš—ñ‚ª‹ó‚©‚Ç‚¤‚©‚ðŽæ“¾‚·‚é
-	 * @param text ’²‚×‚é•¶Žš—ñ
-	 * @return •¶Žš—ñ‚ª‹ó‚©‚Ç‚¤‚©
+	 * æ–‡å­—åˆ—ãŒç©ºã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @param text èª¿ã¹ã‚‹æ–‡å­—åˆ—
+	 * @return æ–‡å­—åˆ—ãŒç©ºã‹ã©ã†ã‹
 	 */
 	public static boolean isBlank(String text) { return text == null || text.trim().length() == 0; }
 }

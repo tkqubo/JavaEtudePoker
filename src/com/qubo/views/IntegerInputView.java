@@ -3,7 +3,7 @@ package com.qubo.views;
 import com.qubo.Utils;
 
 /**
- * ƒ†[ƒU[‚É‘Î‚µ‚Ä®”’l‚Ì“ü—Í‚ğ‹‚ß‚Äˆ—‚ğs‚¤ƒrƒ…[ƒNƒ‰ƒX
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«å¯¾ã—ã¦æ•´æ•°å€¤ã®å…¥åŠ›ã‚’æ±‚ã‚ã¦å‡¦ç†ã‚’è¡Œã†ãƒ“ãƒ¥ãƒ¼ã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public abstract class IntegerInputView extends AbstractView<Integer> {
@@ -13,14 +13,14 @@ public abstract class IntegerInputView extends AbstractView<Integer> {
 	private final View forward;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param forward ‘JˆÚæ‚Ì‰æ–Ê
-	 * @param name ƒrƒ…[–¼
-	 * @param min “ü—Í’l‚Ì‰ºŒÀ
-	 * @param max “ü—Í’l‚ÌãŒÀ
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param forward é·ç§»å…ˆã®ç”»é¢
+	 * @param name ãƒ“ãƒ¥ãƒ¼å
+	 * @param min å…¥åŠ›å€¤ã®ä¸‹é™
+	 * @param max å…¥åŠ›å€¤ã®ä¸Šé™
 	 */
 	public IntegerInputView(View forward, String name, int min, int max) {
-		super(name + "‚Ì•ÏX");
+		super(name + "ã®å¤‰æ›´");
 		this.forward = forward;
 		this.itemName = name;
 		this.min = min;
@@ -29,9 +29,9 @@ public abstract class IntegerInputView extends AbstractView<Integer> {
 
 	@Override
 	protected final void renderBody() {
-		printLine("{0}‚Ì’l‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢({1}`{2})B", itemName, min, max);
-		printLine("‚»‚Ì‚Ü‚ÜEnterƒL[‚ğ‰Ÿ‚¹‚ÎA•ÏX‚ğs‚í‚¸‚É{0}‚É–ß‚è‚Ü‚·B", forward.getName());
-		printLine("Œ»İ‚Ì’l‚Í{0}‚Å‚·B", getValue());
+		printLine("{0}ã®å€¤ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„({1}ï½{2})ã€‚", itemName, min, max);
+		printLine("ãã®ã¾ã¾Enterã‚­ãƒ¼ã‚’æŠ¼ã›ã°ã€å¤‰æ›´ã‚’è¡Œã‚ãšã«{0}ã«æˆ»ã‚Šã¾ã™ã€‚", forward.getName());
+		printLine("ç¾åœ¨ã®å€¤ã¯{0}ã§ã™ã€‚", getValue());
 	}
 
 	@Override
@@ -42,20 +42,20 @@ public abstract class IntegerInputView extends AbstractView<Integer> {
 	@Override
 	protected final View view(Integer input) {
 		if (input != null) {
-			print("{0}‚ğ{1}‚Éİ’è‚µ‚Ü‚µ‚½B", itemName, input);
+			print("{0}ã‚’{1}ã«è¨­å®šã—ã¾ã—ãŸã€‚", itemName, input);
 			setValue(input);
 		}
 		return forward;
 	}
 
 	/**
-	 * ’l‚Ì“ü—Í‚ª‚ ‚Á‚½ê‡‚ÉA‚»‚ê‚ğˆ—‚·‚é
+	 * å€¤ã®å…¥åŠ›ãŒã‚ã£ãŸå ´åˆã«ã€ãã‚Œã‚’å‡¦ç†ã™ã‚‹
 	 * @param value
 	 */
 	protected abstract void setValue(int value);
 	/**
-	 * ˆ—‘O‚Ì’l‚ğæ“¾‚·‚é
-	 * @return •ÏX‘O‚Ì’l
+	 * å‡¦ç†å‰ã®å€¤ã‚’å–å¾—ã™ã‚‹
+	 * @return å¤‰æ›´å‰ã®å€¤
 	 */
 	protected abstract int getValue();
 }

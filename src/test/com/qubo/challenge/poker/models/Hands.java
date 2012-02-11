@@ -6,7 +6,7 @@ import com.qubo.challenge.poker.models.CardException;
 import com.qubo.challenge.poker.models.Hand;
 
 /**
- * テスト用の手札を定義したクラス
+ * 繝�繧ｹ繝育畑縺ｮ謇区惆繧貞ｮ夂ｾｩ縺励◆繧ｯ繝ｩ繧ｹ
  * @author Qubo
  */
 public abstract class Hands {

@@ -16,11 +16,11 @@ import org.junit.Test;
 import com.qubo.challenge.poker.models.Suit;
 
 /**
- * {@link Suit}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link Suit}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class SuitTest {
-	/** {@link Suit#getSymbol()}‚ÌƒeƒXƒg */
+	/** {@link Suit#getSymbol()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetSymbol() {
 		doTestGetSymbol(Spade, SYMBOL_SPADE);
@@ -28,7 +28,7 @@ public class SuitTest {
 		doTestGetSymbol(Club, SYMBOL_CLUB);
 		doTestGetSymbol(Heart, SYMBOL_HEART);
 	}
-	/** {@link #testGetSymbol()}—p‚Ì“à•”ƒƒ\ƒbƒh */
+	/** {@link #testGetSymbol()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰ */
 	private void doTestGetSymbol(Suit suit, char symbolSpade) {
 		assertThat(suit.getSymbol(), is(symbolSpade));
 	}

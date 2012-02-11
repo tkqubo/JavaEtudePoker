@@ -14,11 +14,11 @@ import com.qubo.challenge.poker.models.Hand;
 import com.qubo.challenge.poker.models.TypeOfHand;
 
 /**
- * {@link TypeOfHand}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link TypeOfHand}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class TypeOfHandTest {
-	/** {@link TypeOfHand#getName()}‚ÌƒeƒXƒg */
+	/** {@link TypeOfHand#getName()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetName() {
 		doTestGetName(StraightFlush, NAME_STRAIGHT_FLUSH);
@@ -32,15 +32,15 @@ public class TypeOfHandTest {
 		doTestGetName(HighCards, NAME_HIGH_CARDS);
 	}
 	/**
-	 * {@link #testGetName()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param typeOfHand –ğ
-	 * @param name –ğ–¼
+	 * {@link #testGetName()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param typeOfHand å½¹
+	 * @param name å½¹å
 	 */
 	private void doTestGetName(TypeOfHand typeOfHand, String name) {
 		assertThat(typeOfHand.getName(), is(name));
 	}
 
-	/** {@link TypeOfHand#isValid(Hand)}‚ÌƒeƒXƒg */
+	/** {@link TypeOfHand#isValid(Hand)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsValid() {
 		doTestIsValid(Hands.fiveOfAKind1, 0);
@@ -85,9 +85,9 @@ public class TypeOfHandTest {
 		doTestIsValid(Hands.highCards4, 10);
 	}
 	/**
-	 * {@link #testIsValid()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param validIndex ³‚µ‚¢‚Æ—\‘z‚³‚ê‚é–ğ‚ÌA{@link TypeOfHand#ALL}“à‚É‚¨‚¯‚éˆÊ’u
+	 * {@link #testIsValid()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param validIndex æ­£ã—ã„ã¨äºˆæƒ³ã•ã‚Œã‚‹å½¹ã®ã€{@link TypeOfHand#ALL}å†…ã«ãŠã‘ã‚‹ä½ç½®
 	 */
 	private void doTestIsValid(Hand hand, int validIndex) {
 		for (int i = 0; i < TypeOfHand.ALL.length; i++) {
@@ -101,7 +101,7 @@ public class TypeOfHandTest {
 		}
 	}
 
-	/** {@link TypeOfHand#getTypeOfHand(Hand)}‚ÌƒeƒXƒg */
+	/** {@link TypeOfHand#getTypeOfHand(Hand)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetTypeOfHand() {
 		doTestGetTypeOfHand(Hands.fiveOfAKind1, FiveOfAKind);
@@ -146,9 +146,9 @@ public class TypeOfHandTest {
 		doTestGetTypeOfHand(Hands.highCards4, HighCards);
 	}
 	/**
-	 * {@link #testGetTypeOfHand()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param typeOfHand —\‘z‚³‚ê‚é–ğ
+	 * {@link #testGetTypeOfHand()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param typeOfHand äºˆæƒ³ã•ã‚Œã‚‹å½¹
 	 */
 	private void doTestGetTypeOfHand(Hand hand, TypeOfHand typeOfHand) {
 		assertThat(TypeOfHand.getTypeOfHand(hand), is(typeOfHand));

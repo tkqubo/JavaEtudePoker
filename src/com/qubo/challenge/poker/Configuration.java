@@ -1,18 +1,18 @@
 package com.qubo.challenge.poker;
 
 /**
- * �Q�[���̐ݒ��ۑ�����N���X
+ * ゲームの設定を保存するクラス
  * @author Qubo
  */
 public abstract class Configuration {
 	private Configuration() { }
 
-	/** �J�[�h�̌����񐔂̃f�t�H���g�l */
+	/** カードの交換回数のデフォルト値 */
 	public static final int DEFAULT_CHANGECOUNT = 1;
-	/** �W���[�J�[�����̃f�t�H���g�l */
+	/** ジョーカー枚数のデフォルト値 */
 	public static final int DEFAULT_JOKERCOUNT = 0;
-	/** �W���[�J�[���� */
+	/** ジョーカー枚数 */
 	public static int jokerCount = DEFAULT_JOKERCOUNT;
-	/** �J�[�h�̌����� */
+	/** カードの交換回数 */
 	public static int changeCount = DEFAULT_CHANGECOUNT;
 }

@@ -1,17 +1,17 @@
 package com.qubo.views;
 
 /**
- * {@link View}ƒNƒ‰ƒX‚ğ—˜—p‚µ‚½ƒRƒ“ƒ\[ƒ‹ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğÀs‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * {@link View}ã‚¯ãƒ©ã‚¹ã‚’åˆ©ç”¨ã—ãŸã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public abstract class ViewApplication {
 	/**
-	 * w’è‚µ‚½{@link View}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ‹N“®ƒrƒ…[‚Æ‚µ‚ÄA
-	 * ƒRƒ“ƒ\[ƒ‹ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğÀs‚·‚éB<br />
-	 * {@link View}ƒCƒ“ƒXƒ^ƒ“ƒX‚Í{@link View#view()}‚ğŒÄ‚Ño‚·‚±‚Æ‚Å
-	 * Ÿ‚Ìƒrƒ…[‚ğæ“¾‚µA‹[—“I‚É‰æ–Ê‘JˆÚ‚ğs‚¤B<br />
-	 * {@link View#view()}‚ª{@code null}‚ğ•Ô‚µ‚½“_‚ÅI—¹‚·‚éB
-	 * @param entryView ‹N“®ƒrƒ…[
+	 * æŒ‡å®šã—ãŸ{@link View}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’èµ·å‹•ãƒ“ãƒ¥ãƒ¼ã¨ã—ã¦ã€
+	 * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œã™ã‚‹ã€‚<br />
+	 * {@link View}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯{@link View#view()}ã‚’å‘¼ã³å‡ºã™ã“ã¨ã§
+	 * æ¬¡ã®ãƒ“ãƒ¥ãƒ¼ã‚’å–å¾—ã—ã€æ“¬ä¼¼çš„ã«ç”»é¢é·ç§»ã‚’è¡Œã†ã€‚<br />
+	 * {@link View#view()}ãŒ{@code null}ã‚’è¿”ã—ãŸæ™‚ç‚¹ã§çµ‚äº†ã™ã‚‹ã€‚
+	 * @param entryView èµ·å‹•ãƒ“ãƒ¥ãƒ¼
 	 */
 	public static void start(View entryView) {
 		View view = entryView;

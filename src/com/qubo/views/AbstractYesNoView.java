@@ -3,25 +3,25 @@ package com.qubo.views;
 import com.qubo.Utils;
 
 /**
- * ƒ†[ƒU[‚É‘Î‚µ‚Ä’Pƒ‚ÈYES/NOŒ^‚Ì¿–â‚ğs‚¤ƒrƒ…[ƒNƒ‰ƒX
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«å¯¾ã—ã¦å˜ç´”ãªYES/NOå‹ã®è³ªå•ã‚’è¡Œã†ãƒ“ãƒ¥ãƒ¼ã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public abstract class AbstractYesNoView extends AbstractView<Boolean> {
-	/** YES‚É‘Š“–‚·‚é•¶š: {@code 'y'} */
+	/** YESã«ç›¸å½“ã™ã‚‹æ–‡å­—: {@code 'y'} */
 	private static final char YES = 'y';
-	/** NO‚É‘Š“–‚·‚é•¶š: {@code 'n'} */
+	/** NOã«ç›¸å½“ã™ã‚‹æ–‡å­—: {@code 'n'} */
 	private static final char NO = 'n';
-	/** YES, NO ‚Ì”z—ñ */
+	/** YES, NO ã®é…åˆ— */
 	private static final char[] YESNO = new char[] { YES, NO };
 	private final String question;
 	private final boolean defaultAnswer;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param name ƒrƒ…[–¼
-	 * @param question ¿–â“à—e
-	 * @param defaultAnswer ƒ†[ƒU[‚ª‰½‚à“ü—Í‚ğs‚í‚¸‚ÉEnterƒL[‚ğ‰Ÿ‚µ‚½ê‡‚É“K—p‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•Ô“š
-	 * i{@code true}‚ªYES‚ÉA{@code false}‚ªNO‚É‘Š“–‚·‚éj
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param name ãƒ“ãƒ¥ãƒ¼å
+	 * @param question è³ªå•å†…å®¹
+	 * @param defaultAnswer ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒä½•ã‚‚å…¥åŠ›ã‚’è¡Œã‚ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã—ãŸå ´åˆã«é©ç”¨ã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¿”ç­”
+	 * ï¼ˆ{@code true}ãŒYESã«ã€{@code false}ãŒNOã«ç›¸å½“ã™ã‚‹ï¼‰
 	 */
 	public AbstractYesNoView(String name, String question, boolean defaultAnswer) {
 		super(name);
@@ -32,8 +32,8 @@ public abstract class AbstractYesNoView extends AbstractView<Boolean> {
 	@Override
 	protected final void renderBody() {
 		printLine(question);
-		printLine(" Y=‚Í‚¢/N=‚¢‚¢‚¦");
-		printLine("‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ğ‰Ÿ‚·‚ÆA[{0}]‚É‚È‚è‚Ü‚·", defaultAnswer  ? "‚Í‚¢" : "‚¢‚¢‚¦");
+		printLine(" Y=ã¯ã„/N=ã„ã„ãˆ");
+		printLine("ä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã€[{0}]ã«ãªã‚Šã¾ã™", defaultAnswer  ? "ã¯ã„" : "ã„ã„ãˆ");
 	}
 
 	@Override

@@ -6,25 +6,25 @@ import java.util.List;
 import com.qubo.Utils;
 
 /**
- * ‰æ–Ê‘JˆÚ—p‚Ìƒrƒ…[B
- * ƒ†[ƒU[‚É1•¶š“ü—Í‚ğ‹‚ß‚ÄA‚»‚Ì•¶š‚É‘Î‰‚µ‚½ƒƒjƒ…[€–Ú‚Ìƒrƒ…[‚É‘JˆÚ‚·‚éB
+ * ç”»é¢é·ç§»ç”¨ã®ãƒ“ãƒ¥ãƒ¼ã€‚
+ * ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«1æ–‡å­—å…¥åŠ›ã‚’æ±‚ã‚ã¦ã€ãã®æ–‡å­—ã«å¯¾å¿œã—ãŸãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã®ãƒ“ãƒ¥ãƒ¼ã«é·ç§»ã™ã‚‹ã€‚
  * @author Qubo
  */
 public class MenuView extends AbstractView<MenuItem> {
-	/** ˆê‰æ–Ê‚É•\¦‚·‚éƒƒjƒ…[€–Ú‚ÌÅ‘å” */
+	/** ä¸€ç”»é¢ã«è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã®æœ€å¤§æ•° */
 	public static int MAX_RECORDS = 10;
-	/** •¡”ƒy[ƒW‚É‚È‚Á‚½ê‡‚ÉA‘O‚Ìƒy[ƒW‚É‘JˆÚ‚·‚é‚½‚ß‚Ìƒƒjƒ…[€–Ú */
-	private final MenuItem previousPage = new MenuItem('<', "‘O‚Ìƒy[ƒW", this);
-	/** •¡”ƒy[ƒW‚É‚È‚Á‚½ê‡‚ÉAŸ‚Ìƒy[ƒW‚É‘JˆÚ‚·‚é‚½‚ß‚Ìƒƒjƒ…[€–Ú */
-	private final MenuItem nextPage = new MenuItem('>', "Ÿ‚Ìƒy[ƒW", this);
+	/** è¤‡æ•°ãƒšãƒ¼ã‚¸ã«ãªã£ãŸå ´åˆã«ã€å‰ã®ãƒšãƒ¼ã‚¸ã«é·ç§»ã™ã‚‹ãŸã‚ã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›® */
+	private final MenuItem previousPage = new MenuItem('<', "å‰ã®ãƒšãƒ¼ã‚¸", this);
+	/** è¤‡æ•°ãƒšãƒ¼ã‚¸ã«ãªã£ãŸå ´åˆã«ã€æ¬¡ã®ãƒšãƒ¼ã‚¸ã«é·ç§»ã™ã‚‹ãŸã‚ã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›® */
+	private final MenuItem nextPage = new MenuItem('>', "æ¬¡ã®ãƒšãƒ¼ã‚¸", this);
 
 	private final List<MenuItem> menuItems;
 	private int page;
 	private MenuItem defaultMenuItem;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param name ƒrƒ…[–¼
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param name ãƒ“ãƒ¥ãƒ¼å
 	 */
 	public MenuView(String name) {
 		super(name);
@@ -32,40 +32,40 @@ public class MenuView extends AbstractView<MenuItem> {
 		this.page = 0;
 	}
 	/**
-	 * ƒƒjƒ…[€–Ú‚ğ’Ç‰Á‚·‚é
-	 * @param menuItem ’Ç‰Á‚·‚éƒƒjƒ…[€–Ú
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’è¿½åŠ ã™ã‚‹
+	 * @param menuItem è¿½åŠ ã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®
 	 */
 	public void addMenuItem(MenuItem menuItem) {
 		menuItems.add(menuItem);
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½ˆø”‚©‚çƒƒjƒ…[€–Ú‚ğ¶¬‚µ‚Ä’Ç‰Á‚·‚é
-	 * @param accessCharacter ƒAƒNƒZƒX•¶š
-	 * @param view ƒrƒ…[
+	 * ä¸ãˆã‚‰ã‚ŒãŸå¼•æ•°ã‹ã‚‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’ç”Ÿæˆã—ã¦è¿½åŠ ã™ã‚‹
+	 * @param accessCharacter ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
+	 * @param view ãƒ“ãƒ¥ãƒ¼
 	 */
 	public void addMenuItem(char accessCharacter, View view) {
 		addMenuItem(new MenuItem(accessCharacter, view));
 	}
 	/**
-	 * ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú‚ğæ“¾‚·‚éB
-	 * ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú‚Íƒrƒ…[‚Ìˆê”Ô‰º‚É•\¦‚³‚êAƒ†[ƒU[‚ª‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ğ‰Ÿ‚µ‚½ê‡‚É“K—p‚³‚ê‚éB
-	 * @return ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’å–å¾—ã™ã‚‹ã€‚
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã¯ãƒ“ãƒ¥ãƒ¼ã®ä¸€ç•ªä¸‹ã«è¡¨ç¤ºã•ã‚Œã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã—ãŸå ´åˆã«é©ç”¨ã•ã‚Œã‚‹ã€‚
+	 * @return ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®
 	 */
 	public MenuItem getDefaultMenuItem() {
 		return defaultMenuItem;
 	}
 	/**
-	 * ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú‚ğİ’è‚·‚éB
-	 * ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú‚Íƒrƒ…[‚Ìˆê”Ô‰º‚É•\¦‚³‚êAƒ†[ƒU[‚ª‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ğ‰Ÿ‚µ‚½ê‡‚É“K—p‚³‚ê‚éB
-	 * @param defaultMenuItem ƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’è¨­å®šã™ã‚‹ã€‚
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã¯ãƒ“ãƒ¥ãƒ¼ã®ä¸€ç•ªä¸‹ã«è¡¨ç¤ºã•ã‚Œã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã—ãŸå ´åˆã«é©ç”¨ã•ã‚Œã‚‹ã€‚
+	 * @param defaultMenuItem ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®
 	 */
 	public void setDefaultMenuItem(MenuItem defaultMenuItem) {
 		this.defaultMenuItem = defaultMenuItem;
 	}
 	/**
-	 * —^‚¦‚ç‚ê‚½ˆø”‚©‚çƒƒjƒ…[€–Ú‚ğ¶¬‚µ‚ÄAƒfƒtƒHƒ‹ƒg‚Ìƒƒjƒ…[€–Ú‚Æ‚µ‚Äİ’è‚·‚éB
-	 * @param accessCharacter ƒAƒNƒZƒX•¶š
-	 * @param view ƒrƒ…[
+	 * ä¸ãˆã‚‰ã‚ŒãŸå¼•æ•°ã‹ã‚‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’ç”Ÿæˆã—ã¦ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã¨ã—ã¦è¨­å®šã™ã‚‹ã€‚
+	 * @param accessCharacter ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
+	 * @param view ãƒ“ãƒ¥ãƒ¼
 	 */
 	public void setDefaultMenuItem(char accessCharacter, View view) {
 		setDefaultMenuItem(new MenuItem(accessCharacter, view));
@@ -73,8 +73,8 @@ public class MenuView extends AbstractView<MenuItem> {
 
 	@Override
 	protected final void renderBody() {
-		printLine("ƒƒjƒ…[‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B");
-		printLine("‰½‚à“ü—Í‚¹‚¸EnterƒL[‚ğ‰Ÿ‚·‚ÆA[{0}]‚É‚È‚è‚Ü‚·B", defaultMenuItem.getView().getName());
+		printLine("ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’é¸æŠã—ã¦ãã ã•ã„ã€‚");
+		printLine("ä½•ã‚‚å…¥åŠ›ã›ãšEnterã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã€[{0}]ã«ãªã‚Šã¾ã™ã€‚", defaultMenuItem.getView().getName());
 		printThinSeparator();
 
 		for (int i = page * MAX_RECORDS; i < Math.min(menuItems.size(), (page + 1) * MAX_RECORDS); i++) {
@@ -94,7 +94,7 @@ public class MenuView extends AbstractView<MenuItem> {
 			if (hasNextPage()) {
 				printLine(nextPage.toString());
 			}
-			printLine("    Œ»İ{0}/{1}ƒy[ƒW–Ú‚ğ•\¦‚µ‚Ä‚¢‚Ü‚·", page + 1, getPageTotal());
+			printLine("    ç¾åœ¨{0}/{1}ãƒšãƒ¼ã‚¸ç›®ã‚’è¡¨ç¤ºã—ã¦ã„ã¾ã™", page + 1, getPageTotal());
 		}
 		printThinSeparator();
 		printLine(defaultMenuItem.toString());
@@ -125,8 +125,8 @@ public class MenuView extends AbstractView<MenuItem> {
 	}
 
 	/**
-	 * —LŒø‚ÈƒAƒNƒZƒX•¶š‚ğ”z—ñ‚Æ‚µ‚Äæ“¾‚·‚é
-	 * @return —LŒø‚ÈƒAƒNƒZƒX•¶š
+	 * æœ‰åŠ¹ãªã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—ã‚’é…åˆ—ã¨ã—ã¦å–å¾—ã™ã‚‹
+	 * @return æœ‰åŠ¹ãªã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
 	 */
 	private char[] getAccessCharacters() {
 		List<Character> list = new ArrayList<Character>();
@@ -150,24 +150,24 @@ public class MenuView extends AbstractView<MenuItem> {
 		return accessCharacters;
 	}
 	/**
-	 * ƒƒjƒ…[ƒrƒ…[‚ª‘O‚Ìƒy[ƒW‚ğ‚Â‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * @return ƒƒjƒ…[ƒrƒ…[‚ª‘O‚Ìƒy[ƒW‚ğ‚Â‚©‚Ç‚¤‚©
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ãŒå‰ã®ãƒšãƒ¼ã‚¸ã‚’æŒã¤ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @return ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ãŒå‰ã®ãƒšãƒ¼ã‚¸ã‚’æŒã¤ã‹ã©ã†ã‹
 	 */
 	private boolean hasPreviousPage() { return menuItems.size() > MAX_RECORDS && page >= 1; }
 	/**
-	 * ƒƒjƒ…[ƒrƒ…[‚ªŸ‚Ìƒy[ƒW‚ğ‚Â‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * @return ƒƒjƒ…[ƒrƒ…[‚ªŸ‚Ìƒy[ƒW‚ğ‚Â‚©‚Ç‚¤‚©
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ãŒæ¬¡ã®ãƒšãƒ¼ã‚¸ã‚’æŒã¤ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @return ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ãŒæ¬¡ã®ãƒšãƒ¼ã‚¸ã‚’æŒã¤ã‹ã©ã†ã‹
 	 */
 	private boolean hasNextPage() { return menuItems.size() > MAX_RECORDS && page < getPageTotal() - 1; }
 	/**
-	 * ƒƒjƒ…[ƒrƒ…[‚Ì‘ƒy[ƒW”‚ğæ“¾‚·‚é
-	 * @return ƒƒjƒ…[ƒrƒ…[‚Ì‘ƒy[ƒW”
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ç·ãƒšãƒ¼ã‚¸æ•°ã‚’å–å¾—ã™ã‚‹
+	 * @return ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ç·ãƒšãƒ¼ã‚¸æ•°
 	 */
 	private double getPageTotal() { return Math.ceil((float)menuItems.size() / MAX_RECORDS); }
 
 	@Override
 	protected View view(MenuItem input) {
-		print("[{0}]‚ğ‘I‘ğ‚µ‚Ü‚µ‚½B", input.getName());
+		print("[{0}]ã‚’é¸æŠã—ã¾ã—ãŸã€‚", input.getName());
 		return input.getView();
 	}
 }

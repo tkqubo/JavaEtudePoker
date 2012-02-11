@@ -2,54 +2,54 @@ package com.qubo.challenge.poker.models;
 
 
 /**
- * ƒ|[ƒJ[‚Ì–ğ‚ğ•\‚µ‚½ƒNƒ‰ƒXB<br />
- * –ğ‚Ì‹­‚³‚Í‹­‚¢‡‚ÉŸ‚Ì‚Æ‚¨‚è‚Å‚ ‚éF<br />
+ * ãƒãƒ¼ã‚«ãƒ¼ã®å½¹ã‚’è¡¨ã—ãŸã‚¯ãƒ©ã‚¹ã€‚<br />
+ * å½¹ã®å¼·ã•ã¯å¼·ã„é †ã«æ¬¡ã®ã¨ãŠã‚Šã§ã‚ã‚‹ï¼š<br />
  * <ol>
- * <li>ƒtƒ@ƒCƒuƒJ[ƒh</li>
- * <li>ƒƒCƒ„ƒ‹ƒtƒ‰ƒbƒVƒ…</li>
- * <li>ƒXƒgƒŒ[ƒgƒtƒ‰ƒbƒVƒ…</li>
- * <li>ƒtƒH[ƒJ[ƒh</li>
- * <li>ƒtƒ‹ƒnƒEƒX</li>
- * <li>ƒtƒ‰ƒbƒVƒ…</li>
- * <li>ƒXƒgƒŒ[ƒg</li>
- * <li>ƒXƒŠ[ƒJ[ƒh</li>
- * <li>ƒc[ƒyƒA</li>
- * <li>ƒƒ“ƒyƒA</li>
- * <li>–ğ–³‚µ</li>
+ * <li>ãƒ•ã‚¡ã‚¤ãƒ–ã‚«ãƒ¼ãƒ‰</li>
+ * <li>ãƒ­ã‚¤ãƒ¤ãƒ«ãƒ•ãƒ©ãƒƒã‚·ãƒ¥</li>
+ * <li>ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥</li>
+ * <li>ãƒ•ã‚©ãƒ¼ã‚«ãƒ¼ãƒ‰</li>
+ * <li>ãƒ•ãƒ«ãƒã‚¦ã‚¹</li>
+ * <li>ãƒ•ãƒ©ãƒƒã‚·ãƒ¥</li>
+ * <li>ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ</li>
+ * <li>ã‚¹ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰</li>
+ * <li>ãƒ„ãƒ¼ãƒšã‚¢</li>
+ * <li>ãƒ¯ãƒ³ãƒšã‚¢</li>
+ * <li>å½¹ç„¡ã—</li>
  * </ol>
- * ƒWƒ‡[ƒJ[‚ğg‚í‚È‚¢ƒ‹[ƒ‹‚Å‚ÍA“–‘R‚Ì‚±‚Æ‚È‚ª‚çƒtƒ@ƒCƒuƒJ[ƒh‚Í‘¶İ‚µ‚È‚¢B
+ * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã‚’ä½¿ã‚ãªã„ãƒ«ãƒ¼ãƒ«ã§ã¯ã€å½“ç„¶ã®ã“ã¨ãªãŒã‚‰ãƒ•ã‚¡ã‚¤ãƒ–ã‚«ãƒ¼ãƒ‰ã¯å­˜åœ¨ã—ãªã„ã€‚
  * @author Qubo
  */
 public enum TypeOfHand {
-	/** ƒtƒ@ƒCƒuƒJ[ƒh */
+	/** ãƒ•ã‚¡ã‚¤ãƒ–ã‚«ãƒ¼ãƒ‰ */
 	FiveOfAKind {
 		@Override public String getName() { return NAME_FIVE_OF_A_KIND; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isOfAKind(5 - hand.getJoker()) == 1;
 		}
 	},
-	/** ƒƒCƒ„ƒ‹ƒtƒ‰ƒbƒVƒ… */
+	/** ãƒ­ã‚¤ãƒ¤ãƒ«ãƒ•ãƒ©ãƒƒã‚·ãƒ¥ */
 	RoyalFlush {
 		@Override public String getName() { return NAME_ROYAL_FLUSH; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isSameSuit() && hand.isSequentialFrom(10);
 		}
 	},
-	/** ƒXƒgƒŒ[ƒgƒtƒ‰ƒbƒVƒ… */
+	/** ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥ */
 	StraightFlush {
 		@Override public String getName() { return NAME_STRAIGHT_FLUSH; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isSameSuit() && hand.isSequential() && !hand.isSequentialFrom(10);
 		}
 	},
-	/** ƒtƒH[ƒJ[ƒh */
+	/** ãƒ•ã‚©ãƒ¼ã‚«ãƒ¼ãƒ‰ */
 	FourOfAKind {
 		@Override public String getName() { return NAME_FOUR_OF_A_KIND; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isOfAKind(4 - hand.getJoker()) == 1;
 		}
 	},
-	/** ƒtƒ‹ƒnƒEƒX */
+	/** ãƒ•ãƒ«ãƒã‚¦ã‚¹ */
 	FullHouse {
 		@Override public String getName() { return NAME_FULL_HOUSE; }
 		@Override public boolean isValid(Hand hand) {
@@ -57,21 +57,21 @@ public enum TypeOfHand {
 					|| (hand.isOfAKind(2) == 2 && hand.getJoker() == 1);
 		}
 	},
-	/** ƒtƒ‰ƒbƒVƒ… */
+	/** ãƒ•ãƒ©ãƒƒã‚·ãƒ¥ */
 	Flush {
 		@Override public String getName() { return NAME_FLUSH; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isSameSuit() && !hand.isSequential();
 		}
 	},
-	/** ƒXƒgƒŒ[ƒg */
+	/** ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ */
 	Straight {
 		@Override public String getName() { return NAME_STRAIGHT; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isSequential() && !hand.isSameSuit();
 		}
 	},
-	/** ƒXƒŠ[ƒJ[ƒh */
+	/** ã‚¹ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰ */
 	ThreeOfAKind {
 		@Override public String getName() { return NAME_THREE_OF_A_KIND; }
 		@Override public boolean isValid(Hand hand) {
@@ -80,14 +80,14 @@ public enum TypeOfHand {
 					|| (hand.getJoker() == 2 && hand.isOfAKind(1) == 3 && !hand.isSameSuit() && !hand.isSequential());
 		}
 	},
-	/** ƒc[ƒyƒA */
+	/** ãƒ„ãƒ¼ãƒšã‚¢ */
 	TwoPair {
 		@Override public String getName() { return NAME_TWO_PAIR; }
 		@Override public boolean isValid(Hand hand) {
 			return hand.isOfAKind(2) == 2 && hand.isOfAKind(1) == 1;
 		}
 	},
-	/** ƒƒ“ƒyƒA */
+	/** ãƒ¯ãƒ³ãƒšã‚¢ */
 	OnePair {
 		@Override public String getName() { return NAME_ONE_PAIR; }
 		@Override public boolean isValid(Hand hand) {
@@ -95,7 +95,7 @@ public enum TypeOfHand {
 					|| (hand.getJoker() == 1 && hand.isOfAKind(1) == 4 && !hand.isSameSuit() && !hand.isSequential());
 		}
 	},
-	/** –ğ–³‚µ */
+	/** å½¹ç„¡ã— */
 	HighCards {
 		@Override public String getName() { return NAME_HIGH_CARDS; }
 		@Override public boolean isValid(Hand hand) {
@@ -103,55 +103,55 @@ public enum TypeOfHand {
 		}
 	};
 
-	/** –ğ–¼ */
-	public static final String NAME_FIVE_OF_A_KIND = "ƒtƒ@ƒCƒuƒJ[ƒh";
-	/** –ğ–¼ */
-	public static final String NAME_ROYAL_FLUSH = "ƒƒCƒ„ƒ‹ƒtƒ‰ƒbƒVƒ…";
-	/** –ğ–¼ */
-	public static final String NAME_STRAIGHT_FLUSH = "ƒXƒgƒŒ[ƒgƒtƒ‰ƒbƒVƒ…";
-	/** –ğ–¼ */
-	public static final String NAME_FOUR_OF_A_KIND = "ƒtƒH[ƒJ[ƒh";
-	/** –ğ–¼ƒX */
-	public static final String NAME_FULL_HOUSE = "ƒtƒ‹ƒnƒEƒX";
-	/** –ğ–¼ */
-	public static final String NAME_FLUSH = "ƒtƒ‰ƒbƒVƒ…";
-	/** –ğ–¼ */
-	public static final String NAME_STRAIGHT = "ƒXƒgƒŒ[ƒg";
-	/** –ğ–¼ */
-	public static final String NAME_THREE_OF_A_KIND = "ƒXƒŠ[ƒJ[ƒh";
-	/** –ğ–¼ */
-	public static final String NAME_TWO_PAIR = "ƒc[ƒyƒA";
-	/** –ğ–¼ */
-	public static final String NAME_ONE_PAIR = "ƒƒ“ƒyƒA";
-	/** –ğ–¼ */
-	public static final String NAME_HIGH_CARDS = "–ğ–³‚µ";
+	/** å½¹å */
+	public static final String NAME_FIVE_OF_A_KIND = "ãƒ•ã‚¡ã‚¤ãƒ–ã‚«ãƒ¼ãƒ‰";
+	/** å½¹å */
+	public static final String NAME_ROYAL_FLUSH = "ãƒ­ã‚¤ãƒ¤ãƒ«ãƒ•ãƒ©ãƒƒã‚·ãƒ¥";
+	/** å½¹å */
+	public static final String NAME_STRAIGHT_FLUSH = "ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥";
+	/** å½¹å */
+	public static final String NAME_FOUR_OF_A_KIND = "ãƒ•ã‚©ãƒ¼ã‚«ãƒ¼ãƒ‰";
+	/** å½¹åã‚¹ */
+	public static final String NAME_FULL_HOUSE = "ãƒ•ãƒ«ãƒã‚¦ã‚¹";
+	/** å½¹å */
+	public static final String NAME_FLUSH = "ãƒ•ãƒ©ãƒƒã‚·ãƒ¥";
+	/** å½¹å */
+	public static final String NAME_STRAIGHT = "ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ";
+	/** å½¹å */
+	public static final String NAME_THREE_OF_A_KIND = "ã‚¹ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰";
+	/** å½¹å */
+	public static final String NAME_TWO_PAIR = "ãƒ„ãƒ¼ãƒšã‚¢";
+	/** å½¹å */
+	public static final String NAME_ONE_PAIR = "ãƒ¯ãƒ³ãƒšã‚¢";
+	/** å½¹å */
+	public static final String NAME_HIGH_CARDS = "å½¹ç„¡ã—";
 
 	/**
-	 * –ğ‚Ì–¼‘O‚ğæ“¾‚·‚é
-	 * @return –ğ‚Ì–¼‘O
+	 * å½¹ã®åå‰ã‚’å–å¾—ã™ã‚‹
+	 * @return å½¹ã®åå‰
 	 */
 	public abstract String getName();
 	/**
-	 * èD‚ª–ğ‚ÌğŒ‚ğ–‚½‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚éB
-	 * ‚±‚Ìƒƒ\ƒbƒh‚Å
+	 * æ‰‹æœ­ãŒå½¹ã®æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹ã€‚
+	 * ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã§
 	 * <strong>
-	 * {@code true}‚ğæ“¾‚·‚é‚±‚Æ‚ÍA‚æ‚è‚ˆÊ‚Ì–ğ‚ª‘¶İ‚·‚é‰Â”\«‚ğ”rœ‚µ‚È‚¢B
+	 * {@code true}ã‚’å–å¾—ã™ã‚‹ã“ã¨ã¯ã€ã‚ˆã‚Šé«˜ä½ã®å½¹ãŒå­˜åœ¨ã™ã‚‹å¯èƒ½æ€§ã‚’æ’é™¤ã—ãªã„ã€‚
 	 * </strong>
-	 * Å‚ˆÊ‚Ì–ğ‚ğ’m‚è‚½‚¢ê‡‚ÍA{@link #getTypeOfHand(Hand)}‚ğg‚¤‚±‚ÆB
-	 * @param hand èDƒCƒ“ƒXƒ^ƒ“ƒX
-	 * @return èD‚ª–ğ‚ÌğŒ‚ğ–‚½‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+	 * æœ€é«˜ä½ã®å½¹ã‚’çŸ¥ã‚ŠãŸã„å ´åˆã¯ã€{@link #getTypeOfHand(Hand)}ã‚’ä½¿ã†ã“ã¨ã€‚
+	 * @param hand æ‰‹æœ­ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @return æ‰‹æœ­ãŒå½¹ã®æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
 	 */
 	public abstract boolean isValid(Hand hand);
 
-	/** ƒ|[ƒJ[‚Ì‘S‚Ä‚Ì–ğ‚ğA‹­‚¢‚à‚Ì‚©‚ç‡‚É•À‚×‚½”z—ñ */
+	/** ãƒãƒ¼ã‚«ãƒ¼ã®å…¨ã¦ã®å½¹ã‚’ã€å¼·ã„ã‚‚ã®ã‹ã‚‰é †ã«ä¸¦ã¹ãŸé…åˆ— */
 	public static final TypeOfHand[] ALL = {
 		FiveOfAKind, RoyalFlush, StraightFlush, FourOfAKind, FullHouse, Flush, Straight, ThreeOfAKind, TwoPair, OnePair, HighCards
 	};
 
 	/**
-	 * èD‚ª\¬‚µ‚¤‚é–ğ‚Ì’†‚ÅAÅ‚à‚ˆÊ‚Ì‚à‚Ì‚ğ•Ô‚·B
-	 * @param hand èD
-	 * @return –ğ
+	 * æ‰‹æœ­ãŒæ§‹æˆã—ã†ã‚‹å½¹ã®ä¸­ã§ã€æœ€ã‚‚é«˜ä½ã®ã‚‚ã®ã‚’è¿”ã™ã€‚
+	 * @param hand æ‰‹æœ­
+	 * @return å½¹
 	 */
 	public static TypeOfHand getTypeOfHand(Hand hand) {
 		for (TypeOfHand typeOfHand : ALL) {
@@ -160,7 +160,7 @@ public enum TypeOfHand {
 		return null;
 	}
 	/*
-	 * (”ñ Javadoc)
+	 * (é Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

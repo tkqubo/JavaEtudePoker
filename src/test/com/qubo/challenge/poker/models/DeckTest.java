@@ -21,11 +21,11 @@ import com.qubo.challenge.poker.models.Hand;
 import com.qubo.challenge.poker.models.Suit;
 
 /**
- * {@link Deck}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link Deck}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class DeckTest {
-	/** {@link Deck#deal()}‚ÌƒeƒXƒg */
+	/** {@link Deck#deal()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testDeal() {
 		doTestDeal(0, 3);
@@ -33,9 +33,9 @@ public class DeckTest {
 		doTestDeal(2, 1);
 	}
 	/**
-	 * {@link #testDeal()}—p‚Ì“à•”ƒNƒ‰ƒX
-	 * @param jokerCount {@link Hand}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğì‚éÛ‚Éw’è‚·‚éAƒWƒ‡[ƒJ[‚Ì–‡”
-	 * @param cardNeeded ÅŒã‚É{@link Deck#deal()}‚ğŒÄ‚Ño‚·‚Æ‚«‚ÉA‘«‚è‚È‚­‚È‚é‚Å‚ ‚ë‚¤ƒJ[ƒh‚Ì–‡”
+	 * {@link #testDeal()}ç”¨ã®å†…éƒ¨ã‚¯ãƒ©ã‚¹
+	 * @param jokerCount {@link Hand}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œã‚‹éš›ã«æŒ‡å®šã™ã‚‹ã€ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°
+	 * @param cardNeeded æœ€å¾Œã«{@link Deck#deal()}ã‚’å‘¼ã³å‡ºã™ã¨ãã«ã€è¶³ã‚Šãªããªã‚‹ã§ã‚ã‚ã†ã‚«ãƒ¼ãƒ‰ã®æšæ•°
 	 */
 	private void doTestDeal(int jokerCount, int cardNeeded) {
 		Deck deck = safeCreateDeck(jokerCount);
@@ -58,9 +58,9 @@ public class DeckTest {
 		}
 	}
 	/**
-	 * {@link Deck#deal()}‚ğˆÀ‘S‚ÉŒÄ‚Ño‚·‚½‚ß‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param deck {@link Deck#deal()}‚ÌŒÄ‚Ño‚µæ‚Æ‚È‚é{@link Deck}ƒCƒ“ƒXƒ^ƒ“ƒX
-	 * @return {@link Hand}ƒCƒ“ƒXƒ^ƒ“ƒX
+	 * {@link Deck#deal()}ã‚’å®‰å…¨ã«å‘¼ã³å‡ºã™ãŸã‚ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param deck {@link Deck#deal()}ã®å‘¼ã³å‡ºã—å…ˆã¨ãªã‚‹{@link Deck}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @return {@link Hand}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	private Hand safeDeal(Deck deck) {
 		try {
@@ -70,14 +70,14 @@ public class DeckTest {
 		}
 	}
 	/**
-	 * {@link Deck}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğˆÀ‘S‚ÉŒÄ‚Ño‚·‚½‚ß‚Ì“à•”ƒƒ\ƒbƒh
-	 * @return {@link Deck}ƒCƒ“ƒXƒ^ƒ“ƒX
+	 * {@link Deck}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å®‰å…¨ã«å‘¼ã³å‡ºã™ãŸã‚ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @return {@link Deck}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	private Deck safeCreateDeck() { return safeCreateDeck(0); }
 	/**
-	 * {@link Deck}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğˆÀ‘S‚ÉŒÄ‚Ño‚·‚½‚ß‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param jokerCount ƒWƒ‡[ƒJ[‚Ì–‡”
-	 * @return {@link Deck}ƒCƒ“ƒXƒ^ƒ“ƒX
+	 * {@link Deck}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å®‰å…¨ã«å‘¼ã³å‡ºã™ãŸã‚ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param jokerCount ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æšæ•°
+	 * @return {@link Deck}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	private Deck safeCreateDeck(int jokerCount) {
 		Deck deck = null;
@@ -87,9 +87,9 @@ public class DeckTest {
 		return deck;
 	}
 	/**
-	 * {@link #testDeal()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand ŒğŠ·Œã‚ÌèD
-	 * @param handOld Œ³‚ÌèD
+	 * {@link #testDeal()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand äº¤æ›å¾Œã®æ‰‹æœ­
+	 * @param handOld å…ƒã®æ‰‹æœ­
 	 */
 	private void areDifferent(Hand hand, Hand handOld) {
 		if (handOld != null) {
@@ -103,7 +103,7 @@ public class DeckTest {
 		}
 	}
 
-	/** {@link Deck#change(Hand, int...)}‚ÌƒeƒXƒg */
+	/** {@link Deck#change(Hand, int...)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testChange() {
 		Deck deck = safeCreateDeck();
@@ -207,10 +207,10 @@ public class DeckTest {
 	}
 
 	/**
-	 * {@link #testChange()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param deck ƒfƒbƒL
-	 * @param hand èD
-	 * @param indices ŒğŠ·‚µ‚½‚¢ƒJ[ƒh‚ÌˆÊ’u
+	 * {@link #testChange()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param deck ãƒ‡ãƒƒã‚­
+	 * @param hand æ‰‹æœ­
+	 * @param indices äº¤æ›ã—ãŸã„ã‚«ãƒ¼ãƒ‰ã®ä½ç½®
 	 */
 	private void doTestChange(Deck deck, Hand hand, int... indices) {
 		List<Card> list = new ArrayList<Card>();
@@ -233,11 +233,11 @@ public class DeckTest {
 		}
 	}
 	/**
-	 * {@link #testChange()}—p‚Ì“à•”ƒƒ\ƒbƒhBƒfƒbƒL“à‚ÉƒJ[ƒh‚ª‘«‚è‚¸A—áŠO‚ª”­¶‚·‚éB
-	 * @param deck ƒfƒbƒL
-	 * @param hand èD
-	 * @param deficits •s‘«‚µ‚Ä‚¢‚é–‡”
-	 * @param indices ŒğŠ·‚µ‚½‚¢ƒJ[ƒh‚ÌˆÊ’u
+	 * {@link #testChange()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰ã€‚ãƒ‡ãƒƒã‚­å†…ã«ã‚«ãƒ¼ãƒ‰ãŒè¶³ã‚Šãšã€ä¾‹å¤–ãŒç™ºç”Ÿã™ã‚‹ã€‚
+	 * @param deck ãƒ‡ãƒƒã‚­
+	 * @param hand æ‰‹æœ­
+	 * @param deficits ä¸è¶³ã—ã¦ã„ã‚‹æšæ•°
+	 * @param indices äº¤æ›ã—ãŸã„ã‚«ãƒ¼ãƒ‰ã®ä½ç½®
 	 */
 	private void doTestChangeNoChange(Deck deck, Hand hand, int deficits, int... indices) {
 		List<Card> list = new ArrayList<Card>();
@@ -254,7 +254,7 @@ public class DeckTest {
 			assertThat(hand.get(i), is(list.get(i)));
 		}
 	}
-	/** {@link Deck#getRemainings()}‚ÌƒeƒXƒg */
+	/** {@link Deck#getRemainings()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetRemainings() {
 		try {

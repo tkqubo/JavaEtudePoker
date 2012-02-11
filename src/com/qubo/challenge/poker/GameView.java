@@ -12,7 +12,7 @@ import com.qubo.views.AbstractView;
 import com.qubo.views.View;
 
 /**
- * ƒRƒ“ƒ\[ƒ‹‚Å‚Ìƒ|[ƒJ[‚ğ•\Œ»‚µ‚½{@link View}
+ * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã§ã®ãƒãƒ¼ã‚«ãƒ¼ã‚’è¡¨ç¾ã—ãŸ{@link View}
  * @author Qubo
  */
 public class GameView extends AbstractView<int[]> {
@@ -22,11 +22,11 @@ public class GameView extends AbstractView<int[]> {
 	private final View parent;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param parent ŒÄ‚Ño‚µŒ³‚Ì{@link View}ƒCƒ“ƒXƒ^ƒ“ƒX
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param parent å‘¼ã³å‡ºã—å…ƒã®{@link View}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	 */
 	GameView(View parent) {
-		super("ƒ|[ƒJ[");
+		super("ãƒãƒ¼ã‚«ãƒ¼");
 		this.parent = parent;
 		try {
 			changeCount = Configuration.changeCount;
@@ -42,34 +42,34 @@ public class GameView extends AbstractView<int[]> {
 		TypeOfHand typeOfHand = TypeOfHand.getTypeOfHand(hand);
 
 		if (changeCount == Configuration.changeCount)
-			printLine("‰ŠúèD‚ÍŸ‚Ì‚Æ‚¨‚è‚Å‚·B");
+			printLine("åˆæœŸæ‰‹æœ­ã¯æ¬¡ã®ã¨ãŠã‚Šã§ã™ã€‚");
 
-		printLine("„¬„ª„­„¬„ª„­„¬„ª„­„¬„ª„­„¬„ª„­");
-		printLine("„«{0}„«„«{1}„«„«{2}„«„«{3}„«„«{4}„«",
+		printLine("â”â”â”“â”â”â”“â”â”â”“â”â”â”“â”â”â”“");
+		printLine("â”ƒ{0}â”ƒâ”ƒ{1}â”ƒâ”ƒ{2}â”ƒâ”ƒ{3}â”ƒâ”ƒ{4}â”ƒ",
 				hand.get(0).getSuitSymbol2Bytes(),
 				hand.get(1).getSuitSymbol2Bytes(),
 				hand.get(2).getSuitSymbol2Bytes(),
 				hand.get(3).getSuitSymbol2Bytes(),
 				hand.get(4).getSuitSymbol2Bytes());
-		printLine("„«{0}„«„«{1}„«„«{2}„«„«{3}„«„«{4}„«",
+		printLine("â”ƒ{0}â”ƒâ”ƒ{1}â”ƒâ”ƒ{2}â”ƒâ”ƒ{3}â”ƒâ”ƒ{4}â”ƒ",
 				hand.get(0).getNumberSymbol2Bytes(),
 				hand.get(1).getNumberSymbol2Bytes(),
 				hand.get(2).getNumberSymbol2Bytes(),
 				hand.get(3).getNumberSymbol2Bytes(),
 				hand.get(4).getNumberSymbol2Bytes());
-		printLine("„¯„ª„®„¯„ª„®„¯„ª„®„¯„ª„®„¯„ª„®");
-		printLine("  ‚P    ‚Q    ‚R    ‚S    ‚T  ");
+		printLine("â”—â”â”›â”—â”â”›â”—â”â”›â”—â”â”›â”—â”â”›");
+		printLine("  ï¼‘    ï¼’    ï¼“    ï¼”    ï¼•  ");
 
 		if (changeCount == 0) {
-			printLine("–ğ‚Í[{0}]‚Å‚·BEnterƒL[‚ğ‰Ÿ‚·‚Æƒƒjƒ…[‚É–ß‚è‚Ü‚·", typeOfHand.getName());
+			printLine("å½¹ã¯[{0}]ã§ã™ã€‚Enterã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚Šã¾ã™", typeOfHand.getName());
 		} else if (deck.getRemainings() == 0) {
 			changeCount = 0;
-			printLine("ƒfƒbƒL‚ÉƒJ[ƒh‚ªc‚Á‚Ä‚¢‚È‚¢‚½‚ßA‚±‚êˆÈãŒğŠ·‚Å‚«‚Ü‚¹‚ñB");
-			printLine("–ğ‚Í[{0}]‚Å‚·BEnterƒL[‚ğ‰Ÿ‚·‚Æƒƒjƒ…[‚É–ß‚è‚Ü‚·", typeOfHand.getName());
+			printLine("ãƒ‡ãƒƒã‚­ã«ã‚«ãƒ¼ãƒ‰ãŒæ®‹ã£ã¦ã„ãªã„ãŸã‚ã€ã“ã‚Œä»¥ä¸Šäº¤æ›ã§ãã¾ã›ã‚“ã€‚");
+			printLine("å½¹ã¯[{0}]ã§ã™ã€‚Enterã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚Šã¾ã™", typeOfHand.getName());
 		} else {
-			printLine("Œ»İ‚Ì–ğ‚Í[{0}]‚Å‚·B‚ ‚Æ{1}‰ñƒJ[ƒh‚ğŒğŠ·‚Å‚«‚Ü‚·B", typeOfHand.getName(), changeCount);
-			printLine("•ÏX‚µ‚½‚¢ƒJ[ƒh‚Ì”Ô†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(1`5)B");
-			printLine("‰½‚à“ü—Í‚¹‚¸‚ÉEnterƒL[‚ğ‰Ÿ‚·‚ÆAŒ»İ‚Ì–ğ‚ğŠm’è‚³‚¹‚Ü‚·B");
+			printLine("ç¾åœ¨ã®å½¹ã¯[{0}]ã§ã™ã€‚ã‚ã¨{1}å›ã‚«ãƒ¼ãƒ‰ã‚’äº¤æ›ã§ãã¾ã™ã€‚", typeOfHand.getName(), changeCount);
+			printLine("å¤‰æ›´ã—ãŸã„ã‚«ãƒ¼ãƒ‰ã®ç•ªå·ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„(1ï½5)ã€‚");
+			printLine("ä½•ã‚‚å…¥åŠ›ã›ãšã«Enterã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ã€ç¾åœ¨ã®å½¹ã‚’ç¢ºå®šã•ã›ã¾ã™ã€‚");
 		}
 	}
 
@@ -87,7 +87,7 @@ public class GameView extends AbstractView<int[]> {
 						for (int i = 0; i < line.length(); i++) {
 							int value = Integer.parseInt("" + line.charAt(i));
 							if (value < 1 || value > 5) {
-								print("1‚©‚ç5‚Ü‚Å‚Ì”š‚¾‚¯‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢I");
+								print("1ã‹ã‚‰5ã¾ã§ã®æ•°å­—ã ã‘ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼");
 								break outer;
 							}
 							change[i] = value - 1;
@@ -95,8 +95,8 @@ public class GameView extends AbstractView<int[]> {
 						return change;
 					} else {
 						if (available < 5)
-							print("ƒfƒbƒL‚ÉƒJ[ƒh‚ª‘«‚è‚Ü‚¹‚ñB");
-						print("ˆê“x‚ÉŒğŠ·‚Å‚«‚é‚Ì‚Í{0}–‡‚Ü‚Å‚Å‚·I", available);
+							print("ãƒ‡ãƒƒã‚­ã«ã‚«ãƒ¼ãƒ‰ãŒè¶³ã‚Šã¾ã›ã‚“ã€‚");
+						print("ä¸€åº¦ã«äº¤æ›ã§ãã‚‹ã®ã¯{0}æšã¾ã§ã§ã™ï¼", available);
 					}
 				} else {
 					return new int[0];
@@ -104,7 +104,7 @@ public class GameView extends AbstractView<int[]> {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (NumberFormatException e) {
-				print("“ü—ÍƒtƒH[ƒ}ƒbƒg‚ª‚¨‚©‚µ‚¢‚Å‚·I");
+				print("å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒãŠã‹ã—ã„ã§ã™ï¼");
 			}
 		}
 	}
@@ -121,10 +121,10 @@ public class GameView extends AbstractView<int[]> {
 					StringBuilder builder = new StringBuilder();
 					for (int i : input) {
 						if (builder.length() > 0)
-							builder.append("A");
-						builder.append((i + 1) + "–‡–Ú");
+							builder.append("ã€");
+						builder.append((i + 1) + "æšç›®");
 					}
-					builder.append("‚ğŒğŠ·‚µ‚Ü‚µ‚½B");
+					builder.append("ã‚’äº¤æ›ã—ã¾ã—ãŸã€‚");
 					print(builder.toString());
 				} catch (CardException e) {
 					e.printStackTrace();

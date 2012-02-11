@@ -1,5 +1,5 @@
 /**
- * ƒRƒ“ƒ\[ƒ‹ƒvƒƒOƒ‰ƒ€‚Æ‚µ‚Ä‚Ìƒ|[ƒJ[ƒQ[ƒ€‚ðƒvƒŒƒC‚·‚é‚½‚ß‚ÌA
- * ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒgƒNƒ‰ƒX{@link com.qubo.challenge.poker.Main}‚ðŽû‚ß‚½ƒpƒbƒP[ƒWB
+ * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¨ã—ã¦ã®ãƒãƒ¼ã‚«ãƒ¼ã‚²ãƒ¼ãƒ ã‚’ãƒ—ãƒ¬ã‚¤ã™ã‚‹ãŸã‚ã®ã€
+ * ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆã‚¯ãƒ©ã‚¹{@link com.qubo.challenge.poker.Main}ã‚’åŽã‚ãŸãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã€‚
  */
 package com.qubo.challenge.poker;

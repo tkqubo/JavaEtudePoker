@@ -5,7 +5,7 @@ import java.text.MessageFormat;
 import com.qubo.Utils;
 
 /**
- * ƒƒjƒ…[ƒrƒ…[({@link MenuView}ƒNƒ‰ƒX)‚Å•\¦‚·‚éƒƒjƒ…[€–Ú‚ğ•\‚µ‚½ƒNƒ‰ƒX
+ * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼({@link MenuView}ã‚¯ãƒ©ã‚¹)ã§è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’è¡¨ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class MenuItem {
@@ -14,34 +14,34 @@ public class MenuItem {
 	private final View view;
 
 	/**
-	 * ‘JˆÚæ‚Ìƒrƒ…[–¼‚ğæ“¾‚·‚é
-	 * @return ‘JˆÚæ‚Ìƒrƒ…[–¼
+	 * é·ç§»å…ˆã®ãƒ“ãƒ¥ãƒ¼åã‚’å–å¾—ã™ã‚‹
+	 * @return é·ç§»å…ˆã®ãƒ“ãƒ¥ãƒ¼å
 	 */
 	public String getName() { return name; }
 	/**
-	 * ƒAƒNƒZƒX•¶š‚ğæ“¾‚·‚é
-	 * @return ƒAƒNƒZƒX•¶š
+	 * ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—ã‚’å–å¾—ã™ã‚‹
+	 * @return ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
 	 */
 	public char getAccessCharacter() { return accessCharacter; }
 	/**
-	 * ‘JˆÚæ‚Ìƒrƒ…[‚ğæ“¾‚·‚é
-	 * @return ‘JˆÚæ‚Ìƒrƒ…[
+	 * é·ç§»å…ˆã®ãƒ“ãƒ¥ãƒ¼ã‚’å–å¾—ã™ã‚‹
+	 * @return é·ç§»å…ˆã®ãƒ“ãƒ¥ãƒ¼
 	 */
 	public View getView() { return view; }
 	/**
-	 * ƒAƒNƒZƒX•¶š‚ğİ’è‚·‚éB<br />
-	 * –{—ˆƒAƒNƒZƒX•¶š‚ÍŒÅ’è‚¾‚ªAƒƒjƒ…[€–Ú”‚ªƒƒjƒ…[ƒrƒ…[‚Å•\¦‚Å‚«‚éŒ”‚ğ’´‚¦‚½ê‡A
-	 * ƒƒjƒ…[ƒrƒ…[‚ª©“®˜A”Ô‚ÅƒAƒNƒZƒX”’l‚ğŠ„‚èU‚Á‚Äƒy[ƒWƒ“ƒO‹@”\‚ğ—LŒø‚É‚·‚éB
-	 * ‚±‚Ìƒƒ\ƒbƒh‚Í‚»‚Ì‚½‚ß‚Ì“à•”—pƒƒ\ƒbƒh‚Å‚ ‚éB
-	 * @param accessCharacter ƒAƒNƒZƒX•¶š
+	 * ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—ã‚’è¨­å®šã™ã‚‹ã€‚<br />
+	 * æœ¬æ¥ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—ã¯å›ºå®šã ãŒã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®æ•°ãŒãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ã§è¡¨ç¤ºã§ãã‚‹ä»¶æ•°ã‚’è¶…ãˆãŸå ´åˆã€
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ“ãƒ¥ãƒ¼ãŒè‡ªå‹•é€£ç•ªã§ã‚¢ã‚¯ã‚»ã‚¹æ•°å€¤ã‚’å‰²ã‚ŠæŒ¯ã£ã¦ãƒšãƒ¼ã‚¸ãƒ³ã‚°æ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹ã€‚
+	 * ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ãã®ãŸã‚ã®å†…éƒ¨ç”¨ãƒ¡ã‚½ãƒƒãƒ‰ã§ã‚ã‚‹ã€‚
+	 * @param accessCharacter ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
 	 */
 	void setAccessCharacter(char accessCharacter) { this.accessCharacter = accessCharacter; }
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param accessCharacter ƒAƒNƒZƒX•¶š
-	 * @param name €–Ú–¼
-	 * @param view ‘JˆÚæƒrƒ…[
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param accessCharacter ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
+	 * @param name é …ç›®å
+	 * @param view é·ç§»å…ˆãƒ“ãƒ¥ãƒ¼
 	 */
 	public MenuItem(char accessCharacter, String name, View view) {
 		this.name = name;
@@ -49,9 +49,9 @@ public class MenuItem {
 		this.view = view;
 	}
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^B€–Ú–¼‚É‚ÍA‘JˆÚæ‚Ìƒrƒ…[–¼‚ªŠ„‚è“–‚Ä‚ç‚ê‚éB
-	 * @param accessCharacter ƒAƒNƒZƒX•¶š
-	 * @param view ‘JˆÚæƒrƒ…[
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚é …ç›®åã«ã¯ã€é·ç§»å…ˆã®ãƒ“ãƒ¥ãƒ¼åãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã‚‹ã€‚
+	 * @param accessCharacter ã‚¢ã‚¯ã‚»ã‚¹æ–‡å­—
+	 * @param view é·ç§»å…ˆãƒ“ãƒ¥ãƒ¼
 	 */
 	public MenuItem(char accessCharacter, View view) {
 		this.name = (view != null) ? view.getName() : null;

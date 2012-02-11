@@ -14,11 +14,11 @@ import com.qubo.challenge.poker.models.CardException;
 import com.qubo.challenge.poker.models.Suit;
 
 /**
- * {@link Card}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link Card}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class CardTest {
-	/** {@link Card#Card(Suit, int)}‚ÌƒeƒXƒg */
+	/** {@link Card#Card(Suit, int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testCard() {
 		doTestCard(Heart, 2, null);
@@ -32,10 +32,10 @@ public class CardTest {
 		doTestCard(Diamond, 15, Card.ERROR_NUMBER_OUT_OF_RANGE);
 	}
 	/**
-	 * {@link #testCard()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param suit ƒ}[ƒN
-	 * @param number ”’l
-	 * @param errorMessage ƒGƒ‰[ƒƒbƒZ[ƒWiƒGƒ‰[‚Ì”­¶‚ğŠú‘Ò‚µ‚Ä‚¢‚éê‡‚Ì‚İj
+	 * {@link #testCard()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param suit ãƒãƒ¼ã‚¯
+	 * @param number æ•°å€¤
+	 * @param errorMessage ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ï¼ˆã‚¨ãƒ©ãƒ¼ã®ç™ºç”Ÿã‚’æœŸå¾…ã—ã¦ã„ã‚‹å ´åˆã®ã¿ï¼‰
 	 */
 	private void doTestCard(Suit suit, int number, String errorMessage) {
 		try {
@@ -49,7 +49,7 @@ public class CardTest {
 		}
 	}
 
-	/** {@link Card#parse(String)}‚ÌƒeƒXƒg */
+	/** {@link Card#parse(String)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testParse() {
 		doTestParse("H2", 2, Heart);
@@ -66,9 +66,9 @@ public class CardTest {
 		doFailTestParse("S123456", "123456");
 	}
 	/**
-	 * {@link #testParse()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param failedFormat ŠÔˆá‚Á‚½ƒtƒH[ƒ}ƒbƒg
-	 * @param failedString ŠÔˆá‚Á‚½‰ÓŠ
+	 * {@link #testParse()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param failedFormat é–“é•ã£ãŸãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param failedString é–“é•ã£ãŸç®‡æ‰€
 	 */
 	private void doFailTestParse(String failedFormat, String failedString) {
 		try {
@@ -79,10 +79,10 @@ public class CardTest {
 		}
 	}
 	/**
-	 * {@link #testParse()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param format ƒtƒH[ƒ}ƒbƒg
-	 * @param num —\‘z‚³‚ê‚é”’l
-	 * @param suit —\‘z‚³‚ê‚éƒ}[ƒN
+	 * {@link #testParse()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param format ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param num äºˆæƒ³ã•ã‚Œã‚‹æ•°å€¤
+	 * @param suit äºˆæƒ³ã•ã‚Œã‚‹ãƒãƒ¼ã‚¯
 	 */
 	private void doTestParse(String format, int num, Suit suit) {
 		try {
@@ -95,7 +95,7 @@ public class CardTest {
 	}
 
 
-	/** {@link Card#getSuit()}‚ÌƒeƒXƒg */
+	/** {@link Card#getSuit()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetSuit() {
 		try {
@@ -116,7 +116,7 @@ public class CardTest {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#getSuitSymbol()}‚ÌƒeƒXƒg */
+	/** {@link Card#getSuitSymbol()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetSuitSymbol() {
 		try {
@@ -137,7 +137,7 @@ public class CardTest {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#getSuitSymbol2Bytes()}‚ÌƒeƒXƒg */
+	/** {@link Card#getSuitSymbol2Bytes()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetSuitSymbol2Bytes() {
 		try {
@@ -148,17 +148,17 @@ public class CardTest {
 			Card joker1 = new Card(Joker, Card.RAW_VALUE_JOKER);
 			Card joker2 = new Card(Joker, 10);
 
-			assertThat(heart03.getSuitSymbol2Bytes(), is("‚g"));
-			assertThat(dia03.getSuitSymbol2Bytes(), is("‚c"));
-			assertThat(spade13.getSuitSymbol2Bytes(), is("‚r"));
-			assertThat(club14.getSuitSymbol2Bytes(), is("‚b"));
-			assertThat(joker1.getSuitSymbol2Bytes(), is("@"));
-			assertThat(joker2.getSuitSymbol2Bytes(), is("@"));
+			assertThat(heart03.getSuitSymbol2Bytes(), is("ï¼¨"));
+			assertThat(dia03.getSuitSymbol2Bytes(), is("ï¼¤"));
+			assertThat(spade13.getSuitSymbol2Bytes(), is("ï¼³"));
+			assertThat(club14.getSuitSymbol2Bytes(), is("ï¼£"));
+			assertThat(joker1.getSuitSymbol2Bytes(), is("ã€€"));
+			assertThat(joker2.getSuitSymbol2Bytes(), is("ã€€"));
 		} catch (CardException e) {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#getRawNumber()}‚ÌƒeƒXƒg */
+	/** {@link Card#getRawNumber()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetRawNumber() {
 		doTestGetRawNumber("H2", 2);
@@ -171,9 +171,9 @@ public class CardTest {
 		doTestGetRawNumber("HA", 14);
 		doTestGetRawNumber("  ", Card.RAW_VALUE_JOKER);
 	}
-	/** {@link #testParse()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param format ƒtƒH[ƒ}ƒbƒg
-	 * @param rawNumber —\‘z’l
+	/** {@link #testParse()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param format ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param rawNumber äºˆæƒ³å€¤
 	 */
 	private void doTestGetRawNumber(String format, int rawNumber) {
 		try {
@@ -183,7 +183,7 @@ public class CardTest {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#getNumberSymbol()}‚ÌƒeƒXƒg */
+	/** {@link Card#getNumberSymbol()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetNumberSymbol() {
 		doTestGetNumberSymbol("H2", "2");
@@ -197,9 +197,9 @@ public class CardTest {
 		doTestGetNumberSymbol("  ", "" + Card.SYMBOL_JOKER);
 	}
 	/**
-	 * {@link #testGetNumberSymbol()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param format ƒtƒH[ƒ}ƒbƒg
-	 * @param numberSymbol —\‘z’l
+	 * {@link #testGetNumberSymbol()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param format ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param numberSymbol äºˆæƒ³å€¤
 	 */
 	private void doTestGetNumberSymbol(String format, String numberSymbol) {
 		try {
@@ -209,23 +209,23 @@ public class CardTest {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#getNumberSymbol2Bytes()}‚ÌƒeƒXƒg */
+	/** {@link Card#getNumberSymbol2Bytes()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetNumberSymbol2Bytes() {
-		doTestGetNumberSymbol2Bytes("H2", "‚Q");
-		doTestGetNumberSymbol2Bytes("S7", "‚V");
-		doTestGetNumberSymbol2Bytes("D9", "‚X");
+		doTestGetNumberSymbol2Bytes("H2", "ï¼’");
+		doTestGetNumberSymbol2Bytes("S7", "ï¼—");
+		doTestGetNumberSymbol2Bytes("D9", "ï¼™");
 		doTestGetNumberSymbol2Bytes("C10", "10");
-		doTestGetNumberSymbol2Bytes("HJ", "‚i");
-		doTestGetNumberSymbol2Bytes("SQ", "‚p");
-		doTestGetNumberSymbol2Bytes("CK", "‚j");
-		doTestGetNumberSymbol2Bytes("HA", "‚`");
-		doTestGetNumberSymbol2Bytes("  ", "@");
+		doTestGetNumberSymbol2Bytes("HJ", "ï¼ª");
+		doTestGetNumberSymbol2Bytes("SQ", "ï¼±");
+		doTestGetNumberSymbol2Bytes("CK", "ï¼«");
+		doTestGetNumberSymbol2Bytes("HA", "ï¼¡");
+		doTestGetNumberSymbol2Bytes("  ", "ã€€");
 	}
 	/**
-	 * {@link #testGetNumberSymbol2Bytes()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param format ƒtƒH[ƒ}ƒbƒg
-	 * @param numberSymbol —\‘z’l
+	 * {@link #testGetNumberSymbol2Bytes()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param format ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param numberSymbol äºˆæƒ³å€¤
 	 */
 	private void doTestGetNumberSymbol2Bytes(String format, String numberSymbol) {
 		try {
@@ -235,7 +235,7 @@ public class CardTest {
 			fail(e.getMessage());
 		}
 	}
-	/** {@link Card#toString()}‚ÌƒeƒXƒg */
+	/** {@link Card#toString()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testToString() {
 		doTestToString("H2");
@@ -249,8 +249,8 @@ public class CardTest {
 		doTestToString("  ");
 	}
 	/**
-	 * {@link #testToString()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param string —\‘z’l
+	 * {@link #testToString()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param string äºˆæƒ³å€¤
 	 */
 	private void doTestToString(String string) {
 		try {

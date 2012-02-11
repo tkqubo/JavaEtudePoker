@@ -12,11 +12,11 @@ import com.qubo.challenge.poker.models.CardException;
 import com.qubo.challenge.poker.models.Hand;
 
 /**
- * {@link Hand}—p‚ÌƒeƒXƒg‚ğ’è‹`‚µ‚½ƒNƒ‰ƒX
+ * {@link Hand}ç”¨ã®ãƒ†ã‚¹ãƒˆã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹
  * @author Qubo
  */
 public class HandTest {
-	/** {@link Hand#Hand(String, String, String, String, String)}‚ÌƒeƒXƒg */
+	/** {@link Hand#Hand(String, String, String, String, String)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testHandStringStringStringStringString() {
 		try {
@@ -34,9 +34,9 @@ public class HandTest {
 		doFailTestHandStringStringStringStringString("H123456", "123456");
 	}
 	/**
-	 * {@link #doFailTestHandStringStringStringStringString(String, boolean)}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param failedFormat ŠÔˆá‚Á‚½ƒtƒH[ƒ}ƒbƒg
-	 * @param failedString ŠÔˆá‚Á‚½‰ÓŠ
+	 * {@link #doFailTestHandStringStringStringStringString(String, boolean)}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param failedFormat é–“é•ã£ãŸãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param failedString é–“é•ã£ãŸç®‡æ‰€
 	 */
 	private void doFailTestHandStringStringStringStringString(String failedFormat, String failedString) {
 		try {
@@ -47,7 +47,7 @@ public class HandTest {
 			assertThat(e.getMessage(), is(message));
 		}
 	}
-	/** {@link Hand#get(int)}‚ÌƒeƒXƒg */
+	/** {@link Hand#get(int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGet() {
 		try {
@@ -72,7 +72,7 @@ public class HandTest {
 		}
 	}
 
-	/** {@link Hand#iterator()}‚ÌƒeƒXƒg */
+	/** {@link Hand#iterator()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIterator() {
 		try {
@@ -97,7 +97,7 @@ public class HandTest {
 		}
 	}
 
-	/** {@link Hand#isSameSuit()}‚ÌƒeƒXƒg */
+	/** {@link Hand#isSameSuit()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsSameSuit() {
 		doTestIsSameSuit(Hands.fiveOfAKind1, false);
@@ -142,15 +142,15 @@ public class HandTest {
 		doTestIsSameSuit(Hands.highCards4, false);
 	}
 	/**
-	 * {@link #testIsSameSuit()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param expected —\‘z’l
+	 * {@link #testIsSameSuit()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param expected äºˆæƒ³å€¤
 	 */
 	private void doTestIsSameSuit(Hand hand, boolean expected) {
 		assertThat(hand.isSameSuit(), is(expected));
 	}
 
-	/** {@link Hand#isSequential()}‚ÌƒeƒXƒg */
+	/** {@link Hand#isSequential()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsSequential() {
 		doTestIsSequential(Hands.fiveOfAKind1, false);
@@ -195,15 +195,15 @@ public class HandTest {
 		doTestIsSequential(Hands.highCards4, false);
 	}
 	/**
-	 * {@link #isSequential()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param expected —\‘z’l
+	 * {@link #isSequential()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param expected äºˆæƒ³å€¤
 	 */
 	private void doTestIsSequential(Hand hand, boolean expected) {
 		assertThat(hand.isSequential(), is(expected));
 	}
 
-	/** {@link Hand#isOfAKind(int)}‚ÌƒeƒXƒg */
+	/** {@link Hand#isOfAKind(int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsOfAKind() {
 		doTestIsOfAKind(Hands.fiveOfAKind1, 0, 0, 0, 1, 0);
@@ -248,9 +248,9 @@ public class HandTest {
 		doTestIsOfAKind(Hands.highCards4, 5, 0, 0, 0, 0);
 	}
 	/**
-	 * {@link #testIsOfAKind()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param results —\‘z’l(n”Ô–Ú‚Ì’l‚ªAu“¯‚¶”š‚ªn–‡‚Ì‘g‚Ì”v‚ğˆÓ–¡‚·‚é)
+	 * {@link #testIsOfAKind()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param results äºˆæƒ³å€¤(nç•ªç›®ã®å€¤ãŒã€ã€ŒåŒã˜æ•°å­—ãŒnæšã®çµ„ã®æ•°ã€ã‚’æ„å‘³ã™ã‚‹)
 	 */
 	private void doTestIsOfAKind(Hand hand, int... results) {
 		for (int i = 0; i < results.length; i++) {
@@ -261,7 +261,7 @@ public class HandTest {
 		}
 	}
 
-	/** {@link Hand#isSequentialFrom(int)}‚ÌƒeƒXƒg */
+	/** {@link Hand#isSequentialFrom(int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testIsSequentialFrom() {
 		doTestIsSequentialFrom(Hands.fiveOfAKind1, -1);
@@ -306,9 +306,9 @@ public class HandTest {
 		doTestIsSequentialFrom(Hands.highCards4, -1);
 	}
 	/**
-	 * {@link #testIsSequentialFrom()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param froms ˜A‘±‚·‚é”’l‚ÌŠJn’liÅ¬’lj
+	 * {@link #testIsSequentialFrom()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param froms é€£ç¶šã™ã‚‹æ•°å€¤ã®é–‹å§‹å€¤ï¼ˆæœ€å°å€¤ï¼‰
 	 */
 	private void doTestIsSequentialFrom(Hand hand, int... froms) {
 		for (int i = 2; i <= 10; i++) {
@@ -321,7 +321,7 @@ public class HandTest {
 		}
 	}
 
-	/** {@link Hand#hasNumber(int)}‚ÌƒeƒXƒg */
+	/** {@link Hand#hasNumber(int)}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testHasNumber() {
 		doTestHasNumber(Hands.fiveOfAKind1, 6);
@@ -366,9 +366,9 @@ public class HandTest {
 		doTestHasNumber(Hands.highCards4, 8, 11, 12, 13, 14);
 	}
 	/**
-	 * {@link #testHasNumber()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param numbers èD‚ª‚Á‚Ä‚¢‚é‚±‚Æ‚ğŠú‘Ò‚³‚ê‚é”š
+	 * {@link #testHasNumber()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param numbers æ‰‹æœ­ãŒæŒã£ã¦ã„ã‚‹ã“ã¨ã‚’æœŸå¾…ã•ã‚Œã‚‹æ•°å­—
 	 */
 	private void doTestHasNumber(Hand hand, int... numbers) {
 		for (int i = 2; i <= 14; i++) {
@@ -379,7 +379,7 @@ public class HandTest {
 		}
 	}
 
-	/** {@link Hand#getJoker()}‚ÌƒeƒXƒg */
+	/** {@link Hand#getJoker()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetJoker() {
 		doTestGetJoker(Hands.fiveOfAKind1, 1);
@@ -424,15 +424,15 @@ public class HandTest {
 		doTestGetJoker(Hands.highCards4, 0);
 	}
 	/**
-	 * {@link #testGetJoker()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param count —\‘z’l
+	 * {@link #testGetJoker()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param count äºˆæƒ³å€¤
 	 */
 	private void doTestGetJoker(Hand hand, int count) {
 		assertThat(hand.getJoker(), is(count));
 	}
 
-	/** {@link Hand#getHighestNumber()}‚ÌƒeƒXƒg */
+	/** {@link Hand#getHighestNumber()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetHighestNumber() {
 		doTestGetHighestNumber(Hands.fiveOfAKind1, 6);
@@ -477,15 +477,15 @@ public class HandTest {
 		doTestGetHighestNumber(Hands.highCards4, 14);
 	}
 	/**
-	 * {@link #testGetHighestNumber()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param highest —\‘z’l
+	 * {@link #testGetHighestNumber()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param highest äºˆæƒ³å€¤
 	 */
 	private void doTestGetHighestNumber(Hand hand, int highest) {
 		assertThat(hand.getHighestNumber(), is(highest));
 	}
 
-	/** {@link Hand#getLowestNumber()}‚ÌƒeƒXƒg */
+	/** {@link Hand#getLowestNumber()}ã®ãƒ†ã‚¹ãƒˆ */
 	@Test
 	public void testGetLowestNumber() {
 		doTestGetLowestNumber(Hands.fiveOfAKind1, 6);
@@ -530,9 +530,9 @@ public class HandTest {
 		doTestGetLowestNumber(Hands.highCards4, 8);
 	}
 	/**
-	 * {@link #testGetLowestNumber()}—p‚Ì“à•”ƒƒ\ƒbƒh
-	 * @param hand èD
-	 * @param highest —\‘z’l
+	 * {@link #testGetLowestNumber()}ç”¨ã®å†…éƒ¨ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param hand æ‰‹æœ­
+	 * @param highest äºˆæƒ³å€¤
 	 */
 	private void doTestGetLowestNumber(Hand hand, int highest) {
 		assertThat(hand.getLowestNumber(), is(highest));
@@ -540,9 +540,9 @@ public class HandTest {
 
 
 	/**
-	 * ”z—ñ‚Ì’†‚Éw’è‚µ‚½—v‘f‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é
-	 * @param target ‘ÎÛ‚Ì”z—ñ
-	 * @param toFind ’T‚µ‚½‚¢—v‘f
+	 * é…åˆ—ã®ä¸­ã«æŒ‡å®šã—ãŸè¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹ã‚’å–å¾—ã™ã‚‹
+	 * @param target å¯¾è±¡ã®é…åˆ—
+	 * @param toFind æ¢ã—ãŸã„è¦ç´ 
 	 * @return
 	 */
 	private boolean contains(int[] target, int toFind) {

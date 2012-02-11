@@ -5,39 +5,39 @@ import java.text.MessageFormat;
 import com.qubo.Utils;
 
 /**
- * ƒgƒ‰ƒ“ƒv‚ÌƒJ[ƒh‚ğ•\‚µ‚½ƒNƒ‰ƒXB
+ * ãƒˆãƒ©ãƒ³ãƒ—ã®ã‚«ãƒ¼ãƒ‰ã‚’è¡¨ã—ãŸã‚¯ãƒ©ã‚¹ã€‚
  * @author Qubo
  */
 public class Card {
-	/** •¶š—ñ‚ÌƒtƒH[ƒ}ƒbƒg‚ª‚¨‚©‚µ‚¢ê‡‚É”­¶ */
-	public static final String ERROR_PARSE = "•¶š—ñ[{0}]’†‚Ì[{1}]‚ğˆ—‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½I";
-	/** ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚É—^‚¦‚½”’l‚ªA”ÍˆÍŠO‚Ìê‡‚É”­¶ */
-	public static final String ERROR_NUMBER_OUT_OF_RANGE = "ƒWƒ‡[ƒJ[ˆÈŠO‚ÌƒJ[ƒh‚ğ¶¬‚·‚éê‡‚ÍA”’l‚ğ2`14‚Ì”ÍˆÍ“à‚Åw’è‚µ‚Ä‚­‚¾‚³‚¢I";
-	/** ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚É—^‚¦‚½ƒ}[ƒN‚ª{@code null}‚¾‚Á‚½ê‡‚É”­¶ */
-	public static final String ERROR_SUIT_NULL = "ƒ}[ƒN‚É‚Ínull‚ğw’è‚Å‚«‚Ü‚¹‚ñI";
+	/** æ–‡å­—åˆ—ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒãŠã‹ã—ã„å ´åˆã«ç™ºç”Ÿ */
+	public static final String ERROR_PARSE = "æ–‡å­—åˆ—[{0}]ä¸­ã®[{1}]ã‚’å‡¦ç†ã§ãã¾ã›ã‚“ã§ã—ãŸï¼";
+	/** ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã«ä¸ãˆãŸæ•°å€¤ãŒã€ç¯„å›²å¤–ã®å ´åˆã«ç™ºç”Ÿ */
+	public static final String ERROR_NUMBER_OUT_OF_RANGE = "ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ä»¥å¤–ã®ã‚«ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯ã€æ•°å€¤ã‚’2ï½14ã®ç¯„å›²å†…ã§æŒ‡å®šã—ã¦ãã ã•ã„ï¼";
+	/** ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã«ä¸ãˆãŸãƒãƒ¼ã‚¯ãŒ{@code null}ã ã£ãŸå ´åˆã«ç™ºç”Ÿ */
+	public static final String ERROR_SUIT_NULL = "ãƒãƒ¼ã‚¯ã«ã¯nullã‚’æŒ‡å®šã§ãã¾ã›ã‚“ï¼";
 
-	/** ƒWƒƒƒbƒN‚Ì•¶š•\Œ» */
+	/** ã‚¸ãƒ£ãƒƒã‚¯ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_JACK = 'J';
-	/** ƒNƒC[ƒ“‚Ì•¶š•\Œ» */
+	/** ã‚¯ã‚¤ãƒ¼ãƒ³ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_QUEEN = 'Q';
-	/** ƒLƒ“ƒO‚Ì•¶š•\Œ» */
+	/** ã‚­ãƒ³ã‚°ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_KING = 'K';
-	/** ƒG[ƒX‚Ì•¶š•\Œ» */
+	/** ã‚¨ãƒ¼ã‚¹ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_ACE = 'A';
-	/** ƒWƒ‡[ƒJ[‚Ì•¶š•\Œ» */
+	/** ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_JOKER = ' ';
-	/** ƒWƒ‡[ƒJ[‚Ì”š */
+	/** ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ•°å­— */
 	public static final int RAW_VALUE_JOKER = -1;
 
 	private final Suit suit;
 	private final int number;
 
 	/**
-	 * •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^B
-	 * ƒWƒ‡[ƒJ[‚ğ¶¬‚·‚éê‡‚ÍA{@code number}‚Ì’l‚Í–³‹‚³‚êA‘ã‚í‚è‚É{@link #RAW_VALUE_JOKER}‚ª“K—p‚³‚ê‚éB
-	 * @param suit ƒ}[ƒN
-	 * @param number ”šiƒG[ƒX‚ğ14‚Æ‚µ‚ÄA2`14‚Ü‚Å‚Å‘S”š‚ğ•\Œ»‚·‚éj
-	 * @throws CardException ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ìˆø”‚ªŠÔˆá‚Á‚Ä‚¢‚éê‡‚É”­¶‚·‚é
+	 * æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
+	 * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯ã€{@code number}ã®å€¤ã¯ç„¡è¦–ã•ã‚Œã€ä»£ã‚ã‚Šã«{@link #RAW_VALUE_JOKER}ãŒé©ç”¨ã•ã‚Œã‚‹ã€‚
+	 * @param suit ãƒãƒ¼ã‚¯
+	 * @param number æ•°å­—ï¼ˆã‚¨ãƒ¼ã‚¹ã‚’14ã¨ã—ã¦ã€2ï½14ã¾ã§ã§å…¨æ•°å­—ã‚’è¡¨ç¾ã™ã‚‹ï¼‰
+	 * @throws CardException ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®å¼•æ•°ãŒé–“é•ã£ã¦ã„ã‚‹å ´åˆã«ç™ºç”Ÿã™ã‚‹
 	 */
 	public Card(Suit suit, int number) throws CardException {
 		if (suit == null) throw new CardException(ERROR_SUIT_NULL);
@@ -47,14 +47,14 @@ public class Card {
 		this.number = (suit != Suit.Joker) ? number : RAW_VALUE_JOKER;
 	}
 	/**
-	 * •¶š—ñ‚ğ‰ğÍ‚µ‚Ä{@link Card}ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚·‚éB<br />
-	 * •¶š—ñ‚Íƒ}[ƒN{”š‚©‚ç¬‚è—§‚Á‚Ä‚¨‚èA
-	 * ƒ}[ƒN‚ÍƒNƒ‰ƒuAƒ_ƒCƒ„ƒ‚ƒ“ƒhAƒn[ƒgAƒXƒy[ƒh‚»‚ê‚¼‚ê‚ªC, D, H, S‚Ìˆê•¶š‚É‘Î‰‚·‚éB<br />
-	 * ”š‚ÍƒG[ƒX‚ğ14‚Æ‚µ‚ÄA2`14‚Ü‚Å‚Å‘S”š‚ğ•\Œ»‚·‚éB<br />
-	 * —áŠO‚Æ‚µ‚ÄAƒWƒ‡[ƒJ[‚Í‹ó”’2•¶š{@code "  "}‚Å¶¬‚·‚éB
-	 * @param format ‰ğÍ‚·‚é•¶š—ñ
-	 * @return ¶¬‚³‚ê‚½{@link Card}ƒCƒ“ƒXƒ^ƒ“ƒX
-	 * @throws CardException •¶š—ñ‚ÌƒtƒH[ƒ}ƒbƒg‚ª‚¨‚©‚µ‚¢ê‡‚É”­¶
+	 * æ–‡å­—åˆ—ã‚’è§£æã—ã¦{@link Card}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹ã€‚<br />
+	 * æ–‡å­—åˆ—ã¯ãƒãƒ¼ã‚¯ï¼‹æ•°å­—ã‹ã‚‰æˆã‚Šç«‹ã£ã¦ãŠã‚Šã€
+	 * ãƒãƒ¼ã‚¯ã¯ã‚¯ãƒ©ãƒ–ã€ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã€ãƒãƒ¼ãƒˆã€ã‚¹ãƒšãƒ¼ãƒ‰ãã‚Œãã‚ŒãŒC, D, H, Sã®ä¸€æ–‡å­—ã«å¯¾å¿œã™ã‚‹ã€‚<br />
+	 * æ•°å­—ã¯ã‚¨ãƒ¼ã‚¹ã‚’14ã¨ã—ã¦ã€2ï½14ã¾ã§ã§å…¨æ•°å­—ã‚’è¡¨ç¾ã™ã‚‹ã€‚<br />
+	 * ä¾‹å¤–ã¨ã—ã¦ã€ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã¯ç©ºç™½2æ–‡å­—{@code "  "}ã§ç”Ÿæˆã™ã‚‹ã€‚
+	 * @param format è§£æã™ã‚‹æ–‡å­—åˆ—
+	 * @return ç”Ÿæˆã•ã‚ŒãŸ{@link Card}ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	 * @throws CardException æ–‡å­—åˆ—ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãŒãŠã‹ã—ã„å ´åˆã«ç™ºç”Ÿ
 	 */
 	public static Card parse(String format) throws CardException {
 		Suit suit;
@@ -116,51 +116,51 @@ public class Card {
 	}
 
 	/**
-	 * ƒJ[ƒh‚Ìƒ}[ƒN‚ğæ“¾‚·‚é
-	 * @return ƒJ[ƒh‚Ìƒ}[ƒN
+	 * ã‚«ãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¯ã‚’å–å¾—ã™ã‚‹
+	 * @return ã‚«ãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¯
 	 */
 	public Suit getSuit() { return suit; }
 	/**
-	 * ƒ}[ƒN‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚·‚éB<br />
+	 * ãƒãƒ¼ã‚¯ã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã™ã‚‹ã€‚<br />
 	 * <ul>
-	 * <li>{@link Suit#Heart}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_HEART}</li>
-	 * <li>{@link Suit#Spade}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_SPADE}</li>
-	 * <li>{@link Suit#Diamond}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_DIAMOND}</li>
-	 * <li>{@link Suit#Club}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_CLUB}</li>
+	 * <li>{@link Suit#Heart}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_HEART}</li>
+	 * <li>{@link Suit#Spade}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_SPADE}</li>
+	 * <li>{@link Suit#Diamond}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_DIAMOND}</li>
+	 * <li>{@link Suit#Club}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_CLUB}</li>
 	 * </ul>
-	 * ‚ğ•¶š—ñ‚Æ‚µ‚Ä•Ô‚·B
-	 * @return ƒ}[ƒN‚Ì•¶š—ñ•\Œ»
+	 * ã‚’æ–‡å­—åˆ—ã¨ã—ã¦è¿”ã™ã€‚
+	 * @return ãƒãƒ¼ã‚¯ã®æ–‡å­—åˆ—è¡¨ç¾
 	 */
 	public String getSuitSymbol() { return "" + suit.getSymbol(); }
 	/**
-	 * ƒ}[ƒN‚Ì•¶š—ñ•\Œ»‚ğ‘SŠp‚Åæ“¾‚·‚éB<br />
+	 * ãƒãƒ¼ã‚¯ã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å…¨è§’ã§å–å¾—ã™ã‚‹ã€‚<br />
 	 * <ul>
-	 * <li>{@link Suit#Heart}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_HEART}‚Ì‘SŠp</li>
-	 * <li>{@link Suit#Spade}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_SPADE}‚Ì‘SŠp</li>
-	 * <li>{@link Suit#Diamond}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_DIAMOND}‚Ì‘SŠp</li>
-	 * <li>{@link Suit#Club}‚ÌƒJ[ƒh‚Í{@link Suit#SYMBOL_CLUB}‚Ì‘SŠp</li>
+	 * <li>{@link Suit#Heart}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_HEART}ã®å…¨è§’</li>
+	 * <li>{@link Suit#Spade}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_SPADE}ã®å…¨è§’</li>
+	 * <li>{@link Suit#Diamond}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_DIAMOND}ã®å…¨è§’</li>
+	 * <li>{@link Suit#Club}ã®ã‚«ãƒ¼ãƒ‰ã¯{@link Suit#SYMBOL_CLUB}ã®å…¨è§’</li>
 	 * </ul>
-	 * ‚ğ•¶š—ñ‚Æ‚µ‚Ä•Ô‚·B
-	 * @return ƒ}[ƒN‚Ì2ƒoƒCƒg•¶š—ñ•\Œ»
+	 * ã‚’æ–‡å­—åˆ—ã¨ã—ã¦è¿”ã™ã€‚
+	 * @return ãƒãƒ¼ã‚¯ã®2ãƒã‚¤ãƒˆæ–‡å­—åˆ—è¡¨ç¾
 	 */
 	public String getSuitSymbol2Bytes() { return "" + Utils.toFullWidth(suit.getSymbol()); }
 	/**
-	 * ƒJ[ƒh‚Ì”š‚ğæ“¾‚·‚éB<br />
-	 * <b>¦ƒG[ƒX‚Í14‚Å•\Œ»‚·‚é</b>B
-	 * @return ƒJ[ƒh‚Ì”š
+	 * ã‚«ãƒ¼ãƒ‰ã®æ•°å­—ã‚’å–å¾—ã™ã‚‹ã€‚<br />
+	 * <b>â€»ã‚¨ãƒ¼ã‚¹ã¯14ã§è¡¨ç¾ã™ã‚‹</b>ã€‚
+	 * @return ã‚«ãƒ¼ãƒ‰ã®æ•°å­—
 	 */
 	public int getRawNumber() { return number; }
 	/**
-	 * ”’l‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚·‚éB<br />
+	 * æ•°å€¤ã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã™ã‚‹ã€‚<br />
 	 * <ul>
-	 * <li>11‚Ìê‡‚Í{@link Card#SYMBOL_JACK}</li>
-	 * <li>12‚Ìê‡‚Í{@link Card#SYMBOL_QUEEN}</li>
-	 * <li>13‚Ìê‡‚Í{@link Card#SYMBOL_KING}</li>
-	 * <li>14‚Ìê‡‚Í{@link Card#SYMBOL_ACE}</li>
-	 * <li>{@link #RAW_VALUE_JOKER}‚Ìê‡‚Í{@link Card#SYMBOL_JOKER}</li>
+	 * <li>11ã®å ´åˆã¯{@link Card#SYMBOL_JACK}</li>
+	 * <li>12ã®å ´åˆã¯{@link Card#SYMBOL_QUEEN}</li>
+	 * <li>13ã®å ´åˆã¯{@link Card#SYMBOL_KING}</li>
+	 * <li>14ã®å ´åˆã¯{@link Card#SYMBOL_ACE}</li>
+	 * <li>{@link #RAW_VALUE_JOKER}ã®å ´åˆã¯{@link Card#SYMBOL_JOKER}</li>
 	 * </ul>
-	 * ‚»‚êˆÈŠO‚Ìê‡‚Í”š‚ğ‚»‚Ì‚Ü‚Ü•¶š—ñ‚É‚µ‚½‚à‚Ì‚ğ•Ô‚·B
-	 * @return ”’l‚Ì•¶š—ñ•\Œ»
+	 * ãã‚Œä»¥å¤–ã®å ´åˆã¯æ•°å­—ã‚’ãã®ã¾ã¾æ–‡å­—åˆ—ã«ã—ãŸã‚‚ã®ã‚’è¿”ã™ã€‚
+	 * @return æ•°å€¤ã®æ–‡å­—åˆ—è¡¨ç¾
 	 */
 	public String getNumberSymbol() {
 		switch (number) {
@@ -173,17 +173,17 @@ public class Card {
 		}
 	}
 	/**
-	 * ”’l‚Ì•¶š—ñ•\Œ»‚ğ2ƒoƒCƒg‚Åæ“¾‚·‚éB<br />
+	 * æ•°å€¤ã®æ–‡å­—åˆ—è¡¨ç¾ã‚’2ãƒã‚¤ãƒˆã§å–å¾—ã™ã‚‹ã€‚<br />
 	 * <ul>
-	 * <li>10‚Ìê‡‚Í‚»‚Ì‚Ü‚Ü{@code "10"}</li>
-	 * <li>11‚Ìê‡‚Í‘SŠp‚Ì{@link Card#SYMBOL_JACK}</li>
-	 * <li>12‚Ìê‡‚Í‘SŠp‚Ì{@link Card#SYMBOL_QUEEN}</li>
-	 * <li>13‚Ìê‡‚Í‘SŠp‚Ì{@link Card#SYMBOL_KING}</li>
-	 * <li>14‚Ìê‡‚Í‘SŠp‚Ì{@link Card#SYMBOL_ACE}</li>
-	 * <li>{@link #RAW_VALUE_JOKER}‚Ìê‡‚Í{@link Card#SYMBOL_JOKER}</li>
+	 * <li>10ã®å ´åˆã¯ãã®ã¾ã¾{@code "10"}</li>
+	 * <li>11ã®å ´åˆã¯å…¨è§’ã®{@link Card#SYMBOL_JACK}</li>
+	 * <li>12ã®å ´åˆã¯å…¨è§’ã®{@link Card#SYMBOL_QUEEN}</li>
+	 * <li>13ã®å ´åˆã¯å…¨è§’ã®{@link Card#SYMBOL_KING}</li>
+	 * <li>14ã®å ´åˆã¯å…¨è§’ã®{@link Card#SYMBOL_ACE}</li>
+	 * <li>{@link #RAW_VALUE_JOKER}ã®å ´åˆã¯{@link Card#SYMBOL_JOKER}</li>
 	 * </ul>
-	 * ‚»‚êˆÈŠO‚Ìê‡‚Í”š‚ğ‘SŠp•¶š‚É‚µ‚Ä•Ô‚·B
-	 * @return ”’l‚Ì2ƒoƒCƒg•¶š—ñ•\Œ»
+	 * ãã‚Œä»¥å¤–ã®å ´åˆã¯æ•°å­—ã‚’å…¨è§’æ–‡å­—ã«ã—ã¦è¿”ã™ã€‚
+	 * @return æ•°å€¤ã®2ãƒã‚¤ãƒˆæ–‡å­—åˆ—è¡¨ç¾
 	 */
 	public String getNumberSymbol2Bytes() {
 		switch (number) {
@@ -198,13 +198,13 @@ public class Card {
 	}
 
 	/*
-	 * (”ñ Javadoc)
+	 * (é Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() { return getSuitSymbol() + getNumberSymbol(); }
 	/*
-	 * (”ñ Javadoc)
+	 * (é Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

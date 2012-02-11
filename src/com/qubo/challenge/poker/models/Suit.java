@@ -1,36 +1,36 @@
 package com.qubo.challenge.poker.models;
 
 /**
- * ƒJ[ƒh‚Ìƒ}[ƒN‚ğ•\Œ»‚µ‚½ƒNƒ‰ƒXB
- * ƒWƒ‡[ƒJ[‚à—áŠO“I‚Éƒ}[ƒN‚Ìˆêí‚Æ‚µ‚Ä’è‹`‚³‚ê‚Ä‚¢‚éB
+ * ã‚«ãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¯ã‚’è¡¨ç¾ã—ãŸã‚¯ãƒ©ã‚¹ã€‚
+ * ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã‚‚ä¾‹å¤–çš„ã«ãƒãƒ¼ã‚¯ã®ä¸€ç¨®ã¨ã—ã¦å®šç¾©ã•ã‚Œã¦ã„ã‚‹ã€‚
  * @author Qubo
  */
 public enum Suit {
-	/** ƒn[ƒg */
+	/** ãƒãƒ¼ãƒˆ */
 	Heart { @Override public char getSymbol() { return SYMBOL_HEART; } },
-	/** ƒXƒy[ƒh */
+	/** ã‚¹ãƒšãƒ¼ãƒ‰ */
 	Spade { @Override public char getSymbol() { return SYMBOL_SPADE; } },
-	/** ƒ_ƒCƒ„ƒ‚ƒ“ƒh */
+	/** ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ */
 	Diamond { @Override public char getSymbol() { return SYMBOL_DIAMOND; } },
-	/** ƒNƒ‰ƒu */
+	/** ã‚¯ãƒ©ãƒ– */
 	Club { @Override public char getSymbol() { return SYMBOL_CLUB; } },
-	/** ƒWƒ‡[ƒJ[ */
+	/** ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ */
 	Joker { @Override public char getSymbol() { return SYMBOL_JOKER; } },
 	;
-	/** ƒn[ƒg‚Ì•¶š•\Œ» */
+	/** ãƒãƒ¼ãƒˆã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_HEART = 'H';
-	/** ƒXƒy[ƒh‚Ì•¶š•\Œ» */
+	/** ã‚¹ãƒšãƒ¼ãƒ‰ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_SPADE = 'S';
-	/** ƒn[ƒg‚Ì•¶š•\Œ» */
+	/** ãƒãƒ¼ãƒˆã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_DIAMOND = 'D';
-	/** ƒNƒ‰ƒu‚Ì•¶š•\Œ» */
+	/** ã‚¯ãƒ©ãƒ–ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_CLUB = 'C';
-	/** ƒWƒ‡[ƒJ[‚Ì•¶š•\Œ» */
+	/** ã‚¸ãƒ§ãƒ¼ã‚«ãƒ¼ã®æ–‡å­—è¡¨ç¾ */
 	public static final char SYMBOL_JOKER = ' ';
 
 	/**
-	 * ƒ}[ƒN‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚·‚é
-	 * @return ƒ}[ƒN‚Ì•¶š—ñ•\Œ»
+	 * ãƒãƒ¼ã‚¯ã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã™ã‚‹
+	 * @return ãƒãƒ¼ã‚¯ã®æ–‡å­—åˆ—è¡¨ç¾
 	 */
 	public abstract char getSymbol();
 }

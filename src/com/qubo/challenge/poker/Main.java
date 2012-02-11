@@ -3,12 +3,12 @@ package com.qubo.challenge.poker;
 import com.qubo.challenge.poker.models.CardException;
 
 /**
- * コンソールプログラムのエントリポイントが定義されたクラス
+ * 繧ｳ繝ｳ繧ｽ繝ｼ繝ｫ繝励Ο繧ｰ繝ｩ繝縺ｮ繧ｨ繝ｳ繝医Μ繝昴う繝ｳ繝医′螳夂ｾｩ縺輔ｌ縺溘け繝ｩ繧ｹ
  * @author Qubo
  */
 public class Main {
 	/**
-	 * エントリポイント。
+	 * 繧ｨ繝ｳ繝医Μ繝昴う繝ｳ繝医�
 	 * @param args
 	 */
 	public static void main(String[] args) {
